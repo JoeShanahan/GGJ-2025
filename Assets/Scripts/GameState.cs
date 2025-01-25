@@ -87,9 +87,14 @@ public class GameState : MonoBehaviour
 
     private void OnShiftStart()
     {
-        //Reset currentCustomerIndex
+        currentCharacterIndex = 0;
+        Debug.Log("Current character index reset to 0.");
+
         //Get correct shift object from list of shift objects
-        //Build list of still valid customers
+
+        characters = successfulCustomers.ToArray();
+        Debug.Log("Repopulated characters list with successful customers.");
+
         failedCustomers.Clear();
         Debug.Log("Cleared the failed customers list for this shift.");
     }
@@ -97,8 +102,11 @@ public class GameState : MonoBehaviour
     private void OnOrderStart()
     {
         //Get Current order from current shift
+
         //Send intro dialogue to dialogue system
+
         //Populate Graphics for environment?
+
         CharacterImageManager characterImageManager = FindObjectOfType<CharacterImageManager>();
         if (characterImageManager != null)
         {
@@ -124,7 +132,9 @@ public class GameState : MonoBehaviour
     private void OnOrderEnd(bool success)
     {
         //Check score, if failed add customer to failed list
+
         //Send success/fail dialogue to dialogue system
+
         //If failed, incriment failed this shift
     }
 
@@ -137,8 +147,11 @@ public class GameState : MonoBehaviour
         }
 
         //If past all available customers then OnShiftEnd()
+
         //If past all available shifts, show ending
+
         //Check for Game Over state
+
         OnShiftStart();
     }
 
