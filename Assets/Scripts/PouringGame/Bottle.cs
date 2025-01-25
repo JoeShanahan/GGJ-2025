@@ -33,6 +33,7 @@ namespace GGJ2025.PouringGame
         private Camera _mainCam;
         private PourGraphics _pourGraphics;
         private Rigidbody2D _rb;
+        private ShakerGraphics _shakerGraphics;
         
         private void OnMouseDown()
         {
@@ -60,6 +61,7 @@ namespace GGJ2025.PouringGame
             _rb = GetComponent<Rigidbody2D>();
             _mainCam = Camera.main;
             _pourGraphics = FindFirstObjectByType<PourGraphics>();
+            _shakerGraphics = FindFirstObjectByType<ShakerGraphics>();
         }
 
         // Update is called once per frame
@@ -94,6 +96,7 @@ namespace GGJ2025.PouringGame
                 pourRate = 0;
             
             _pourGraphics.SetPourRate(pourRate);
+            _shakerGraphics.AddLiquid(_ingredient, pourRate * _maxPourRate);
         }
     }
 }
