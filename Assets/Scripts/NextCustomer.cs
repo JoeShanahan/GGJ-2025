@@ -4,13 +4,14 @@ public class NextCustomerHandler : MonoBehaviour
 {
     [Header("References")]
     public GameState gameState;
+    public DrinkFailed drinkFailed;
     public float score;
 
     public void NextCustomer()
     {
-        if (gameState == null)
+        if (gameState == null || drinkFailed == null)
         {
-            Debug.LogError("GameState reference is missing.");
+            Debug.LogError("Missing references in NextCustomerHandler.");
             return;
         }
 

@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 330304306}
+  drinkFailed: {fileID: 330304307}
   score: 0
 --- !u!4 &167699108
 Transform:
@@ -556,6 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330304305}
   - component: {fileID: 330304306}
+  - component: {fileID: 330304307}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -596,6 +598,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
   - {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
   - {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
+--- !u!114 &330304307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330304303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1e5681cfe91774daba13b52e010f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JamesFailed: 0
+  LauraFailed: 0
+  LoganFailed: 0
+  gameState: {fileID: 330304306}
 --- !u!1 &334934028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,6 +4593,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 330304307}
+        m_TargetAssemblyTypeName: DrinkFailed, Assembly-CSharp
+        m_MethodName: OnDrinkFailed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
