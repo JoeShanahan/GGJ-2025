@@ -25,11 +25,14 @@ namespace GGJ2025.PouringGame
         [SerializeField, Range(0, 180)] private int _startPouringRotate;
         [SerializeField, Range(0, 180)] private int _endPouringRotate;
         [SerializeField, Range(0, 10)] private float _maxPourRate;
+
+        [SerializeField] private IngredientData _ingredient;
         
         private bool _isMouseDown;
         private Vector3 _mouseOffset;
         private Camera _mainCam;
         private PourGraphics _pourGraphics;
+        private Rigidbody2D _rb;
         
         private void OnMouseDown()
         {
@@ -37,16 +40,24 @@ namespace GGJ2025.PouringGame
             _mouseOffset.z = 0;
 
             _isMouseDown = true;
+            _rb.freezeRotation = true;
+            _rb.bodyType = RigidbodyType2D.Kinematic;
+            _rb.linearVelocity = Vector2.zero;
+            _pourGraphics.OnPourStart(_ingredient);
         }
 
         private void OnMouseUp()
         {
             _isMouseDown = false;
+            _rb.freezeRotation = false;
+            _rb.bodyType = RigidbodyType2D.Dynamic;
+            _pourGraphics.OnPourEnd();
         }
 
         // Start is called before the first frame update
         void Start()
         {
+            _rb = GetComponent<Rigidbody2D>();
             _mainCam = Camera.main;
             _pourGraphics = FindFirstObjectByType<PourGraphics>();
         }
@@ -74,10 +85,14 @@ namespace GGJ2025.PouringGame
             float xDistance = Mathf.Clamp(_xMin - transform.position.x, 0, 100);
             float rotate = _turnCurve.Evaluate(xDistance);
 
-            Vector3 endRot = new Vector3(0, 0, rotate);
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, endRot, Time.deltaTime * _rotationResponsiveness);
+            Quaternion endRot = Quaternion.Euler(new Vector3(0, 0, rotate));
+            transform.rotation = Quaternion.Lerp(transform.rotation, endRot, Time.deltaTime * _rotationResponsiveness);
 
             float pourRate = Mathf.InverseLerp(_startPouringRotate, _endPouringRotate, transform.eulerAngles.z);
+
+            if (xDistance <= 0)
+                pourRate = 0;
+            
             _pourGraphics.SetPourRate(pourRate);
         }
     }
