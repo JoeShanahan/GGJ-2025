@@ -37,13 +37,13 @@ public class NextCustomerHandler : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score += 25;
+        score += 50;
         Debug.Log($"Score increased. New score: {score}");
     }
 
     public void DecreaseScore()
     {
-        score -= 25;
+        score -= 50;
         Debug.Log($"Score decreased. New score: {score}");
     }
 }

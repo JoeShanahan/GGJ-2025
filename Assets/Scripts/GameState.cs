@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GameState : MonoBehaviour
@@ -85,6 +86,28 @@ public class GameState : MonoBehaviour
         get => characters.Length > 0 ? characters[currentCharacterIndex] : null;
     }
 
+    [Header("Canvas Image and Scene Sprites")]
+    public UnityEngine.UI.Image customerBackground;
+    public UnityEngine.UI.Image customerForeground;
+    public SpriteRenderer barBackground;
+    public SpriteRenderer barForeground;
+
+    [Header("Horror Level Graphics")]
+    public Sprite normalCustomerBackground;
+    public Sprite normalCustomerForeground;
+    public Sprite normalBarForeground;
+    public Sprite normalBarBackground;
+
+    public Sprite unsettlingCustomerBackground;
+    public Sprite unsettlingCustomerForeground;
+    public Sprite unsettlingBarBackground;
+    public Sprite unsettlingBarForeground;
+
+    public Sprite fullHorrorCustomerBackground;
+    public Sprite fullHorrorCustomerForeground;
+    public Sprite fullHorrorBarBackground;
+    public Sprite fullHorrorBarForeground;
+
     private void OnShiftStart()
     {
         currentCharacterIndex = 0;
@@ -105,7 +128,60 @@ public class GameState : MonoBehaviour
 
         //Send intro dialogue to dialogue system
 
-        //Populate Graphics for environment?
+        Canvas environmentCanvas = FindObjectOfType<Canvas>();
+        SpriteRenderer[] sceneSprites = FindObjectsOfType<SpriteRenderer>();
+
+        if (environmentCanvas == null || sceneSprites.Length < 2)
+        {
+            Debug.LogError("Environment canvas or scene sprites are missing.");
+            return;
+        }
+
+        Image customerBackground = environmentCanvas.GetComponentInChildren<Image>();
+        if (customerBackground == null)
+        {
+            Debug.LogError("Canvas image is missing.");
+            return;
+        }
+
+        Image customerForeground = environmentCanvas.GetComponentInChildren<Image>();
+        if (customerForeground == null)
+        {
+            Debug.LogError("Canvas image is missing.");
+            return;
+        }
+
+        if (customerBackground != null && customerForeground != null && barBackground != null && barForeground != null)
+        {
+            switch (CurrentHorrorLevel)
+            {
+                case HorrorLevel.Normal:
+                    customerBackground.sprite = normalCustomerBackground;
+                    customerForeground.sprite = normalCustomerForeground;
+                    barBackground.sprite = normalBarBackground;
+                    barForeground.sprite = normalBarForeground;
+                    break;
+                case HorrorLevel.Unsettling:
+                    customerBackground.sprite = unsettlingCustomerBackground;
+                    customerForeground.sprite = unsettlingCustomerForeground;
+                    barBackground.sprite = unsettlingBarBackground;
+                    barForeground.sprite = unsettlingBarForeground;
+                    break;
+                case HorrorLevel.FullHorror:
+                    customerBackground.sprite = fullHorrorCustomerBackground;
+                    customerForeground.sprite = fullHorrorCustomerForeground;
+                    barBackground.sprite = fullHorrorBarBackground;
+                    barForeground.sprite = fullHorrorBarForeground;
+                    break;
+                default:
+                    Debug.LogWarning("Horror level not recognized. Graphics not updated.");
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogError("Canvas or scene sprites are not set.");
+        }
 
         CharacterImageManager characterImageManager = FindObjectOfType<CharacterImageManager>();
         if (characterImageManager != null)
@@ -146,11 +222,19 @@ public class GameState : MonoBehaviour
             Debug.Log("Game Over: No customers remaining.");
         }
 
-        //If past all available customers then OnShiftEnd()
+        if (characters.Length == 0)
+        {
+            OnShiftEnd();
+            Debug.Log("No customers remaining. Shift ending.");
+        }
 
         //If past all available shifts, show ending
 
-        //Check for Game Over state
+        if (GameOverState)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            Debug.Log("Transitioning to GameOver scene.");
+        }
 
         OnShiftStart();
     }
