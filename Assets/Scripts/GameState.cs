@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class GameState : MonoBehaviour
 {
+    public Shift[] ShiftData;
     public enum Stage
     {
         Stage1 = 1,
@@ -32,7 +33,32 @@ public class GameState : MonoBehaviour
     [SerializeField]
     private List<CharacterData> failedCustomers = new List<CharacterData>();
 
+    [Header("Successful Customers")]
+    [SerializeField]
+    private List<CharacterData> successfulCustomers = new List<CharacterData>();
+
     private int currentCharacterIndex = 0;
+    
+    [Header("Shift Management")]
+    [SerializeField]
+    private int currentShiftIndex = 0;
+
+    [Header("Game Status")]
+    [SerializeField]
+    private bool gameOverState = false;
+
+    public bool GameOverState
+    {
+        get => gameOverState;
+        set
+        {
+            gameOverState = value;
+            if (gameOverState)
+            {
+                Debug.Log("Game Over State has been triggered.");
+            }
+        }
+    }
 
     public Stage CurrentStage
     {
@@ -59,6 +85,63 @@ public class GameState : MonoBehaviour
         get => characters.Length > 0 ? characters[currentCharacterIndex] : null;
     }
 
+    private void OnShiftStart()
+    {
+        //Reset currentCustomerIndex
+        //Get correct shift object from list of shift objects
+        //Build list of still valid customers
+        failedCustomers.Clear();
+        Debug.Log("Cleared the failed customers list for this shift.");
+    }
+
+    private void OnOrderStart()
+    {
+        //Get Current order from current shift
+        //Send intro dialogue to dialogue system
+        //Populate Graphics for environment?
+        CharacterImageManager characterImageManager = FindObjectOfType<CharacterImageManager>();
+        if (characterImageManager != null)
+        {
+            characterImageManager.UpdateCharacterImage();
+        }
+        else
+        {
+            Debug.LogError("CharacterImageManager not found in the scene.");
+        }
+    }
+
+    private void OnShiftEnd()
+    {
+        if (failedCustomers.Count == 0)
+        {
+            IncreaseHorrorLevel();
+            Debug.Log("No customers failed. Horror level increased.");
+        }
+        currentShiftIndex++;
+        Debug.Log($"Shift increased to: {currentShiftIndex}");
+    }
+
+    private void OnOrderEnd(bool success)
+    {
+        //Check score, if failed add customer to failed list
+        //Send success/fail dialogue to dialogue system
+        //If failed, incriment failed this shift
+    }
+
+    public void CompleteShift(bool success)
+    {
+        if (characters.Length == 0)
+        {
+            GameOverState = true;
+            Debug.Log("Game Over: No customers remaining.");
+        }
+
+        //If past all available customers then OnShiftEnd()
+        //If past all available shifts, show ending
+        //Check for Game Over state
+        OnShiftStart();
+    }
+
     public CharacterData[] GetCharactersArray()
     {
         return characters;
@@ -79,9 +162,23 @@ public class GameState : MonoBehaviour
         }
     }
 
+    public void AddSuccessfulCustomer(CharacterData character)
+    {
+        if (!successfulCustomers.Contains(character))
+        {
+            successfulCustomers.Add(character);
+            Debug.Log($"Added {character.characterName} to successful customers.");
+        }
+    }
+
     public List<CharacterData> GetFailedCustomers()
     {
         return failedCustomers;
+    }
+
+    public List<CharacterData> GetSuccessfulCustomers()
+    {
+        return successfulCustomers;
     }
 
     public void SetStage(int stageNumber)

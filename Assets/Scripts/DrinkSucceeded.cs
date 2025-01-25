@@ -1,15 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class DrinkFailed : MonoBehaviour
+public class DrinkSucceeded : MonoBehaviour
 {
-    [Header("Failure Flags")]
-    private Dictionary<string, bool> failedFlags = new Dictionary<string, bool>();
+    [Header("Success Flags")]
+    private Dictionary<string, bool> successFlags = new Dictionary<string, bool>();
 
     [Header("References")]
     public GameState gameState;
 
-    public void OnDrinkFailed()
+    public void OnDrinkSuccess()
     {
         if (gameState == null)
         {
@@ -25,20 +25,20 @@ public class DrinkFailed : MonoBehaviour
             return;
         }
 
-        if (!failedFlags.ContainsKey(currentCharacter.characterName))
+        if (!successFlags.ContainsKey(currentCharacter.characterName))
         {
-            failedFlags[currentCharacter.characterName] = true;
-            Debug.Log($"{currentCharacter.characterName} has failed.");
+            successFlags[currentCharacter.characterName] = true;
+            Debug.Log($"{currentCharacter.characterName} has succeeded.");
 
-            gameState.AddFailedCustomer(currentCharacter);
+            gameState.AddSuccessfulCustomer(currentCharacter);
         }
         else
         {
-            Debug.LogWarning($"{currentCharacter.characterName} is already marked as failed.");
+            Debug.LogWarning($"{currentCharacter.characterName} is already marked as succeeded.");
         }
     }
 
-    public void HandleFailedCustomers()
+    public void HandleSuccessfulCustomers()
     {
         if (gameState == null)
         {
@@ -47,12 +47,12 @@ public class DrinkFailed : MonoBehaviour
         }
 
         var charactersArray = gameState.GetCharactersArray();
-        var failedCustomers = gameState.GetFailedCustomers();
+        var successfulCustomers = gameState.GetSuccessfulCustomers();
         List<CharacterData> validCustomers = new List<CharacterData>();
 
         foreach (CharacterData character in charactersArray)
         {
-            if (!failedCustomers.Contains(character))
+            if (!successfulCustomers.Contains(character))
             {
                 validCustomers.Add(character);
             }
