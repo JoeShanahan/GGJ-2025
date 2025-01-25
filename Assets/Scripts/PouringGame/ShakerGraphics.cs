@@ -19,10 +19,10 @@ namespace GGJ2025.PouringGame
         [SerializeField] 
         private Transform _liquidScaler;
         
-        [SerializeField] private float _totalR;
-        [SerializeField] private float _totalG;
-        [SerializeField] private float _totalB;
-        [SerializeField] private float _totalLiquid;
+        private float _totalR;
+        private float _totalG;
+        private float _totalB;
+        private float _totalLiquid;
 
         private void Start()
         {
