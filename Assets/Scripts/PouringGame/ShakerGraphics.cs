@@ -11,6 +11,9 @@ namespace GGJ2025.PouringGame
         private SpriteRenderer _liquidSprite;
 
         [SerializeField] 
+        private DrinkMeter _ui;
+        
+        [SerializeField] 
         private float _maximumFill = 50;
 
         [SerializeField] 
@@ -32,6 +35,9 @@ namespace GGJ2025.PouringGame
 
             if (_totalLiquid == 0)
                 return;
+
+            if (_totalLiquid >= _maximumFill)
+                return;
             
             _totalR += ingredient.Tint.r * amount;
             _totalG += ingredient.Tint.g * amount;
@@ -42,6 +48,8 @@ namespace GGJ2025.PouringGame
             float yScale = Mathf.Clamp01(_totalLiquid / _maximumFill);
             
             _liquidScaler.localScale = new Vector3(1, yScale, 1);
+
+            _ui.AddToBar(amount / _maximumFill, ingredient);
 
         }
     }
