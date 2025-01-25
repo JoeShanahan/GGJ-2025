@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    public Shift[] ShiftData;
     public enum Stage
     {
         Stage1 = 1,
