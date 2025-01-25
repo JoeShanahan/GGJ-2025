@@ -29,6 +29,8 @@ public class DrinkFailed : MonoBehaviour
         {
             failedFlags[currentCharacter.characterName] = true;
             Debug.Log($"{currentCharacter.characterName} has failed.");
+
+            gameState.AddFailedCustomer(currentCharacter);
         }
         else
         {
@@ -45,21 +47,17 @@ public class DrinkFailed : MonoBehaviour
         }
 
         var charactersArray = gameState.GetCharactersArray();
-        List<CharacterData> remainingCharacters = new List<CharacterData>();
+        var failedCustomers = gameState.GetFailedCustomers();
+        List<CharacterData> validCustomers = new List<CharacterData>();
 
         foreach (CharacterData character in charactersArray)
         {
-            if (failedFlags.ContainsKey(character.characterName) && failedFlags[character.characterName])
+            if (!failedCustomers.Contains(character))
             {
-                gameState.AddFailedCustomer(character);
-                Debug.Log($"Moved {character.characterName} to failed customers.");
-            }
-            else
-            {
-                remainingCharacters.Add(character);
+                validCustomers.Add(character);
             }
         }
 
-        gameState.UpdateCharacters(remainingCharacters.ToArray());
+        gameState.UpdateCharacters(validCustomers.ToArray());
     }
 }
