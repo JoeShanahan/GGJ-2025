@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d965b527b62714283df19937d4df03, type: 3}
+  m_Name: Laura
+  m_EditorClassIdentifier: 
+  characterName: Laura
+  normal: {fileID: -2041182579323859660, guid: 4b295d9b84cd5b3418bb0bd2dc0523f5, type: 3}
+  unsettling: {fileID: 5372460450592002135, guid: b9c2fbe29343d2b459a08b2e64467923, type: 3}
+  fullHorror: {fileID: -696363092026184366, guid: cd6c293c46abf914e918466023b4f287, type: 3}
