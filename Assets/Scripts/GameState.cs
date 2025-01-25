@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameState : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class GameState : MonoBehaviour
     [SerializeField]
     private CharacterData[] characters;
 
+    [Header("Failed Customers")]
+    [SerializeField]
+    private List<CharacterData> failedCustomers = new List<CharacterData>();
+
     private int currentCharacterIndex = 0;
 
     public Stage CurrentStage
@@ -53,6 +58,31 @@ public class GameState : MonoBehaviour
     public CharacterData CurrentCharacter
     {
         get => characters.Length > 0 ? characters[currentCharacterIndex] : null;
+    }
+
+    public CharacterData[] GetCharactersArray()
+    {
+        return characters;
+    }
+
+    public void UpdateCharacters(CharacterData[] newCharacters)
+    {
+        characters = newCharacters;
+        currentCharacterIndex = Mathf.Clamp(currentCharacterIndex, 0, characters.Length - 1);
+    }
+
+    public void AddFailedCustomer(CharacterData character)
+    {
+        if (!failedCustomers.Contains(character))
+        {
+            failedCustomers.Add(character);
+            Debug.Log($"Added {character.characterName} to failed customers.");
+        }
+    }
+
+    public List<CharacterData> GetFailedCustomers()
+    {
+        return failedCustomers;
     }
 
     public void SetStage(int stageNumber)
