@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Logan
   m_EditorClassIdentifier: 
   characterName: Logan
-  normal: {fileID: 3588393927431764260, guid: 06d116d91be0b394ba249a4df4be22be, type: 3}
-  unsettling: {fileID: 99778409957622199, guid: 9d9441481a1813b4cae3af79f46b8dd9, type: 3}
+  normal: {fileID: -2002087655196797545, guid: b36f54fc3182f5a4ba53bcbbe164501c, type: 3}
+  unsettling: {fileID: 8137891783237503349, guid: df158078afc74b04984764bb690b6bb2, type: 3}
   fullHorror: {fileID: -4287945337090478441, guid: 5567b4987969d014fb52954960212a5c, type: 3}
