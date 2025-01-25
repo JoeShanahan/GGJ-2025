@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Laura
   m_EditorClassIdentifier: 
   characterName: Laura
-  normal: {fileID: -2041182579323859660, guid: 4b295d9b84cd5b3418bb0bd2dc0523f5, type: 3}
+  normal: {fileID: 1472526130075274611, guid: b36f54fc3182f5a4ba53bcbbe164501c, type: 3}
   unsettling: {fileID: 5372460450592002135, guid: b9c2fbe29343d2b459a08b2e64467923, type: 3}
   fullHorror: {fileID: -696363092026184366, guid: cd6c293c46abf914e918466023b4f287, type: 3}
