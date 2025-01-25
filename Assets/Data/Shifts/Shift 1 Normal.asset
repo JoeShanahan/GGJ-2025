@@ -17,8 +17,14 @@ MonoBehaviour:
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
+    introText:
+    - Text: 
+      IsMe: 0
+    - Text: 
+      IsMe: 0
+    failText:
+    - Text: 
+      IsMe: 0
     successText: []
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}

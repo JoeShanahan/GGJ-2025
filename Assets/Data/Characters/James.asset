@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: James
   m_EditorClassIdentifier: 
   characterName: James
-  normal: {fileID: 7714268646673276993, guid: 87a04e4e07dcf9a42ae3ed5ce14f3243, type: 3}
-  unsettling: {fileID: 4346924087574529193, guid: 0b2825ce44bb1ae468b6b0d53666ce08, type: 3}
+  normal: {fileID: 4591929232172720676, guid: b36f54fc3182f5a4ba53bcbbe164501c, type: 3}
+  unsettling: {fileID: 3863723487046822815, guid: df158078afc74b04984764bb690b6bb2, type: 3}
   fullHorror: {fileID: 7870998005430352301, guid: cf2986cf50a35364c83082cbddb6be1c, type: 3}

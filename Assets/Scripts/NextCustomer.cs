@@ -4,13 +4,14 @@ public class NextCustomerHandler : MonoBehaviour
 {
     [Header("References")]
     public GameState gameState;
+    public DrinkFailed drinkFailed;
     public float score;
 
     public void NextCustomer()
     {
-        if (gameState == null)
+        if (gameState == null || drinkFailed == null)
         {
-            Debug.LogError("GameState reference is missing.");
+            Debug.LogError("Missing references in NextCustomerHandler.");
             return;
         }
 
@@ -36,13 +37,13 @@ public class NextCustomerHandler : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score += 25;
+        score += 50;
         Debug.Log($"Score increased. New score: {score}");
     }
 
     public void DecreaseScore()
     {
-        score -= 25;
+        score -= 50;
         Debug.Log($"Score decreased. New score: {score}");
     }
 }

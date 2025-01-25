@@ -12,7 +12,7 @@ public class CharacterImageManager : MonoBehaviour
         UpdateCharacterImage();
     }
 
-    private void UpdateCharacterImage()
+    public void UpdateCharacterImage()
     {
         if (gameState == null || characterImage == null)
         {
