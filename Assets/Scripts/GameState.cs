@@ -1,77 +1,154 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour {
-
-    public enum GameStateType { Normal, Unsettling, FullHorror }
-
-    [System.Serializable]
-    public class GameStateCanvases {
-        public GameStateType stateType;
-        public Canvas[] canvases;
+public class GameState : MonoBehaviour
+{
+    public enum Stage
+    {
+        Stage1 = 1,
+        Stage2 = 2,
+        Stage3 = 3
     }
 
-    public GameStateCanvases[] stateCanvasesArray;
-    public GameStateType currentState = GameStateType.Normal;
-
-    private Queue<Canvas> canvasQueue = new Queue<Canvas>();
-    private Dictionary<GameStateType, Canvas[]> canvasMapping;
-
-    void Start() {
-        canvasMapping = new Dictionary<GameStateType, Canvas[]>();
-        foreach (var stateCanvas in stateCanvasesArray) {
-            canvasMapping[stateCanvas.stateType] = stateCanvas.canvases;
-        }
-
-        InitializeCanvasQueue();
+    public enum HorrorLevel
+    {
+        Normal,
+        Unsettling,
+        FullHorror
     }
 
-    public void OnButtonPress() {
-        if (canvasQueue.Count == 0) {
-            InitializeCanvasQueue();
-        }
+    [Header("Game State Settings")]
+    [SerializeField]
+    private Stage currentStage = Stage.Stage1;
 
-        foreach (Canvas canvas in canvasMapping[currentState]) {
-            canvas.gameObject.SetActive(false);
-        }
+    [SerializeField]
+    private HorrorLevel currentHorrorLevel = HorrorLevel.Normal;
 
-        if (canvasQueue.Count > 0) {
-            Canvas nextCanvas = canvasQueue.Dequeue();
-            nextCanvas.gameObject.SetActive(true);
-        }
-    }
+    [Header("Characters")]
+    [SerializeField]
+    private CharacterData[] characters;
 
-    public void SetGameState(GameStateType newState) {
-        currentState = newState;
-        InitializeCanvasQueue();
-    }
+    private int currentCharacterIndex = 0;
 
-    public void IncreaseGameState() {
-        if (currentState < GameStateType.FullHorror) {
-            currentState++;
-            Debug.Log($"Game state increased to: {currentState}");
-            InitializeCanvasQueue();
-        } else {
-            Debug.LogError("Cannot increase game state. Already at Full Horror.");
+    public Stage CurrentStage
+    {
+        get => currentStage;
+        set
+        {
+            currentStage = value;
+            Debug.Log($"Stage set to: {currentStage}");
         }
     }
 
-    public void DecreaseGameState() {
-        if (currentState > GameStateType.Normal) {
-            currentState--;
-            Debug.Log($"Game state decreased to: {currentState}");
-            InitializeCanvasQueue();
-        } else {
-            Debug.LogError("Cannot decrease game state. Already at Normal.");
+    public HorrorLevel CurrentHorrorLevel
+    {
+        get => currentHorrorLevel;
+        set
+        {
+            currentHorrorLevel = value;
+            Debug.Log($"Horror level set to: {currentHorrorLevel}");
         }
     }
 
-    private void InitializeCanvasQueue() {
-        if (canvasMapping.TryGetValue(currentState, out Canvas[] canvases)) {
-            canvasQueue.Clear();
-            foreach (Canvas canvas in canvases) {
-                canvasQueue.Enqueue(canvas);
-            }
+    public CharacterData CurrentCharacter
+    {
+        get => characters.Length > 0 ? characters[currentCharacterIndex] : null;
+    }
+
+    public void SetStage(int stageNumber)
+    {
+        if (stageNumber >= 1 && stageNumber <= 3)
+        {
+            CurrentStage = (Stage)stageNumber;
+        }
+        else
+        {
+            Debug.LogError("Invalid stage number. Valid values are 1, 2, or 3.");
+        }
+    }
+
+    public void SetHorrorLevel(string horrorLevel)
+    {
+        if (System.Enum.TryParse(horrorLevel, true, out HorrorLevel parsedLevel))
+        {
+            CurrentHorrorLevel = parsedLevel;
+        }
+        else
+        {
+            Debug.LogError("Invalid horror level. Valid values are Normal, Unsettling, or FullHorror.");
+        }
+    }
+
+    public void IncreaseStage()
+    {
+        if (currentStage < Stage.Stage3)
+        {
+            CurrentStage = currentStage + 1;
+        }
+        else
+        {
+            Debug.LogWarning("Cannot increase stage. Already at maximum stage.");
+        }
+    }
+
+    public void DecreaseStage()
+    {
+        if (currentStage > Stage.Stage1)
+        {
+            CurrentStage = currentStage - 1;
+        }
+        else
+        {
+            Debug.LogWarning("Cannot decrease stage. Already at minimum stage.");
+        }
+    }
+
+    public void IncreaseHorrorLevel()
+    {
+        if (currentHorrorLevel < HorrorLevel.FullHorror)
+        {
+            CurrentHorrorLevel = currentHorrorLevel + 1;
+        }
+        else
+        {
+            Debug.LogWarning("Cannot increase horror level. Already at maximum level.");
+        }
+    }
+
+    public void DecreaseHorrorLevel()
+    {
+        if (currentHorrorLevel > HorrorLevel.Normal)
+        {
+            CurrentHorrorLevel = currentHorrorLevel - 1;
+        }
+        else
+        {
+            Debug.LogWarning("Cannot decrease horror level. Already at minimum level.");
+        }
+    }
+
+    public void NextCharacter()
+    {
+        if (characters.Length > 0)
+        {
+            currentCharacterIndex = (currentCharacterIndex + 1) % characters.Length;
+            Debug.Log($"Switched to next character: {CurrentCharacter.characterName}");
+        }
+        else
+        {
+            Debug.LogWarning("No characters available to switch to.");
+        }
+    }
+
+    public void PreviousCharacter()
+    {
+        if (characters.Length > 0)
+        {
+            currentCharacterIndex = (currentCharacterIndex - 1 + characters.Length) % characters.Length;
+            Debug.Log($"Switched to previous character: {CurrentCharacter.characterName}");
+        }
+        else
+        {
+            Debug.LogWarning("No characters available to switch to.");
         }
     }
 }
