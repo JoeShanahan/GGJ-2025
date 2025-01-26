@@ -17,16 +17,89 @@ MonoBehaviour:
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Blood... Bloody Mary.
+      IsMe: 0
+    - Text: Are you alright?
+      IsMe: 1
+    - Text: Bloody Mary.
+      IsMe: 0
+    - Text: (What the fuck is going on here?)
+      IsMe: 1
+    failText:
+    - Text: This is wrong...
+      IsMe: 0
+    - Text: Oh, I'm sor--
+      IsMe: 1
+    - Text: This is wrong...
+      IsMe: 0
+    - Text: (I hope he's alright... really doesn't look it, though...)
+      IsMe: 1
+    successText:
+    - Text: Thank you...
+      IsMe: 0
+    - Text: You're welcome but.. do you need me to call someone? You don't look well.
+      IsMe: 1
+    - Text: ...
+      IsMe: 0
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Heelloo.. I would LOVE a Dry Martiniiii....
+      IsMe: 0
+    - Text: Oh god, are you ok?! What happened to you?
+      IsMe: 1
+    - Text: Why do you mean...? I would LOVE a Dry Martini.
+      IsMe: 0
+    - Text: (She looks like she's been through a meat grinder. Maybe I should call
+        someone.. I'll make the drink first.)
+      IsMe: 1
+    failText:
+    - Text: No, no, nooo.. This won't do...
+      IsMe: 0
+    - Text: What's wrong? I can remake it if you want.
+      IsMe: 1
+    - Text: No... No...
+      IsMe: 0
+    successText:
+    - Text: This is PERFECT.. Thank yooou..
+      IsMe: 0
+    - Text: Are you sure that you're alright? You don't ok..
+      IsMe: 1
+    - Text: 'Oooh? That''s not very nice... You don''t think I''m pretty? '
+      IsMe: 0
+    - Text: I thought I looked pretty...
+      IsMe: 0
+    - Text: That's... not what I meant.
+      IsMe: 1
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Heh.. Hello there!
+      IsMe: 0
+    - Text: Hi..
+      IsMe: 1
+    - Text: Mimosa, please. Heh... heheh...
+      IsMe: 0
+    - Text: (What the fuck is he laughing about?)
+      IsMe: 1
+    failText:
+    - Text: HAH! HAHAHA! This is TERRIBLE.
+      IsMe: 0
+    - Text: Terrible? That's not very.. Ah.. Sorry.
+      IsMe: 1
+    - Text: Heh..heheheh..
+      IsMe: 0
+    successText:
+    - Text: AMAZING. Heheh.. This is GREAT.
+      IsMe: 0
+    - Text: No.. No worries?
+      IsMe: 1
+    - Text: Heheheheh..
+      IsMe: 0

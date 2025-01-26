@@ -17,16 +17,81 @@ MonoBehaviour:
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Another.. Bloody Mary. Please hurry.
+      IsMe: 0
+    - Text: Sir, I really think I should --
+      IsMe: 1
+    - Text: BLOODY MARY. PLEASE.
+      IsMe: 0
+    failText:
+    - Text: No no NO NO. THIS IS ALL WRONG
+      IsMe: 0
+    - Text: Sir I --
+      IsMe: 1
+    - Text: 'WRONG! '
+      IsMe: 0
+    - Text: (There's something seriously wrong here..)
+      IsMe: 0
+    successText:
+    - Text: Yes. Thank you. Thank you..
+      IsMe: 0
+    - Text: You're welcome...
+      IsMe: 1
+    - Text: (There is something seriously wrong here.)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Hellloo my darling... Dry Martini, please...
+      IsMe: 0
+    - Text: Sure...
+      IsMe: 1
+    - Text: (She doesn't look any better...But doesn't look any worse so I suppose
+        that's something...)
+      IsMe: 0
+    failText:
+    - Text: 'This isn''t what I ordderred.. '
+      IsMe: 0
+    - Text: Sorry.. I could try again?
+      IsMe: 1
+    - Text: Not... whatt I orderreedd..
+      IsMe: 0
+    successText:
+    - Text: This looked deliciouss.. Thank you my darllinggg...
+      IsMe: 0
+    - Text: You're welcome, I hope you feel better soon.
+      IsMe: 1
+    - Text: Oh but I feel just fiiinneee...
+      IsMe: 0
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Heeehhhh... Mimosaaa!
+      IsMe: 0
+    - Text: 'Heh.. heheheh... '
+      IsMe: 0
+    - Text: Sure.. uh.. coming right up..
+      IsMe: 1
+    failText:
+    - Text: Hehh.. you fucked it up!
+      IsMe: 0
+    - Text: Wha--
+      IsMe: 1
+    - Text: YOU GOT IT WRONG HAHAHA!
+      IsMe: 0
+    - Text: (This guy must be on something...)
+      IsMe: 1
+    successText:
+    - Text: Hehh... Perfect.
+      IsMe: 0
+    - Text: Hope... you enjoy your drink, sir.
+      IsMe: 1
+    - Text: Yess... yesss... heh
+      IsMe: 0
