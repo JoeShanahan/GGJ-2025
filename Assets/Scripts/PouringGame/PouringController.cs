@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GGJ2025.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ namespace GGJ2025.PouringGame
         [SerializeField] private Text _currentText;
         [SerializeField, Range(0, 1)] private float _percentTolerance = 0.1f;
         
+        [SerializeField] private FinishedDrinkPopup _finishPopup;
+        
         private Dictionary<IngredientData, float> _goalPercents;
 
         private void Start()
@@ -30,8 +33,7 @@ namespace GGJ2025.PouringGame
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log($"Correct Ingredients? {DidUseCorrectIngredients()}");
-                Debug.Log($"Correct Mix? {DidUseCorrectMixture()}");
+                _finishPopup.Show(GetResult());
             }
         }
         
@@ -56,7 +58,42 @@ namespace GGJ2025.PouringGame
 
         public DrinkMakeResult GetResult()
         {
-            return null;
+            var result = new DrinkMakeResult();
+
+            if (_currentCocktail == null)
+                return result;
+
+            result.Cocktail = _currentCocktail;
+
+            if (DidUseCorrectIngredients() == false)
+            {
+                result.MixMessage = "Wrong Recipe";
+            }
+            else if (DidUseCorrectMixture() == false)
+            {
+                result.MixMessage = "Wrong Mix";
+            }
+            else
+            {
+                result.MixMessage = "Good Mix";
+                result.MixSuccess = true;
+            }
+            
+            if (_shaker.PercentFull * 100 < _currentCocktail.FullMinimum)
+            {
+                result.FillMessage = "Too Empty";
+            }
+            else if (_shaker.PercentFull * 100 > _currentCocktail.FullMaximum)
+            {
+                result.FillMessage = "Too Full";
+            }
+            else
+            {
+                result.FillMessage = "Just Right";
+                result.FillSuccess = true;
+            }
+            
+            return result;
         }
 
         private bool DidUseCorrectIngredients()

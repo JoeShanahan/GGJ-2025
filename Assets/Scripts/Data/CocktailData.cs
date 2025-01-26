@@ -8,6 +8,12 @@ public class CocktailData : ScriptableObject
     public string CocktailName;
     public List<RecipeItem> Recipe;
     
+    [TextArea(3, 3)]
+    public string Description;
+
+    public Sprite Icon;
+    public Sprite FailedIcon;
+    
     [Range(0, 100)]
     public int FullMinimum = 10;
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fa6109b0572bfb44ab0c6db5b55af049
+guid: a73e2da49676d4a60a640896b92cb55a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3238399122425527003
-    second: MenuIcon_0
+      213: 3431787134304651068
+    second: arrow-next (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MenuIcon_0
+      name: arrow-next (1)_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1
-        width: 362
-        height: 580
+        x: 48
+        y: 11
+        width: 181
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bda3c1518da11fc20800000000000000
-      internalID: 3238399122425527003
+      spriteID: c370cfc573820af20800000000000000
+      internalID: 3431787134304651068
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MenuIcon_0: 3238399122425527003
+      arrow-next (1)_0: 3431787134304651068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
