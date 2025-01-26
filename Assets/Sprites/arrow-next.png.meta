@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f34e8847338b5ef49b92f5d66504f206
+guid: a73e2da49676d4a60a640896b92cb55a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3168583610173063545
-    second: GGJ25 Main Bar Bar_0
+      213: 3431787134304651068
+    second: arrow-next (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GGJ25 Main Bar Bar_0
+      name: arrow-next (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 392
+        x: 48
+        y: 11
+        width: 181
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78e72829efde604d0800000000000000
-      internalID: -3168583610173063545
+      spriteID: c370cfc573820af20800000000000000
+      internalID: 3431787134304651068
       vertices: []
       indices: 
       edges: []
@@ -151,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GGJ25 Main Bar Bar_0: -3168583610173063545
+      arrow-next (1)_0: 3431787134304651068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
