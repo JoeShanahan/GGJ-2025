@@ -20,7 +20,7 @@ namespace GGJ2025.PouringGame
         [SerializeField] private FinishedDrinkPopup _finishPopup;
         
         private Dictionary<IngredientData, float> _goalPercents;
-
+        
 
         private void Update()
         {
@@ -28,7 +28,14 @@ namespace GGJ2025.PouringGame
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _finishPopup.Show(GetResult());
+                if (_finishPopup.gameObject.activeSelf)
+                {
+                    _finishPopup.Hide();
+                }
+                else
+                {
+                    _finishPopup.Show(GetResult());
+                }
             }
         }
         

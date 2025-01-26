@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ public class GameFlowController : MonoBehaviour
 
     private void OnDialogueDone()
     {
+        Debug.Log("OnDialogueDone");
         if (_hasMadeDrink)
         {
             OnOrderEnd(_pourGame.GetResult().WasSuccess);
@@ -45,6 +47,7 @@ public class GameFlowController : MonoBehaviour
 
     public void StartMixingGame()
     {
+        Debug.Log("StartMixingGame");
         _screenMan.ShowPouringScreen();
         _pourGame.InitPouringGame(_currentOrderInfo.cocktail);
 
@@ -52,6 +55,7 @@ public class GameFlowController : MonoBehaviour
 
     public void EndMixingGame()
     {
+        Debug.Log("EndMixingGame");
         _hasMadeDrink = true;
         _screenMan.SetOrderComplete(_pourGame.GetResult(), _currentOrderInfo);
     }
@@ -65,11 +69,19 @@ public class GameFlowController : MonoBehaviour
 
     private void OnGameStart()
     {
+        Debug.Log("OnGameStart");
         OnShiftStart();
     }
 
     private void OnShiftStart()
     {
+        if (_currentShiftIndex >= 3)
+        {
+            OnGameOver();
+            return;
+        }
+        
+        Debug.Log("OnShiftStart");
         _failedCustomerCount = 0;
         _currentShift = null;
         
@@ -106,16 +118,25 @@ public class GameFlowController : MonoBehaviour
         }
 
         OrderInfo order = _ordersRemaining.Dequeue();
+        StartCoroutine(StartOrderWithDelay(order));
+    }
+
+    private IEnumerator StartOrderWithDelay(OrderInfo order)
+    {
+        yield return new WaitForSeconds(1);
         OnOrderStart(order);
     }
 
     private void OnGameOver()
     {
+        Debug.Log("OnGameOver");
         _screenMan.ShowGameOverScreen();
     }
     
     private void OnOrderStart(OrderInfo info)
     {
+        Debug.Log("OnOrderStart");
+
         _currentOrderInfo = info;
         _hasMadeDrink = false;
         _screenMan.SetOrderStarted(info, _currentShift.horrorLevel);
@@ -123,6 +144,8 @@ public class GameFlowController : MonoBehaviour
 
     private void OnShiftEnd()
     {
+        Debug.Log("OnShiftEnd");
+
         if (_failedCustomerCount == 0)
         {
             _currentHorrorLevel = (GameState.HorrorLevel)((int)_currentHorrorLevel + 1);
@@ -136,10 +159,16 @@ public class GameFlowController : MonoBehaviour
         {
             OnGameOver();
         }
+        else
+        {
+            OnShiftStart();
+        }
     }
 
     private void OnOrderEnd(bool success)
     {
+        Debug.Log("OnOrderEnd");
+
         if (success == false)
         {
             _stillHereCharacters.Remove(_currentOrderInfo.customer);

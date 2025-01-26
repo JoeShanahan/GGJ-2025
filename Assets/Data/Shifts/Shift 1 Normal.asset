@@ -84,4 +84,6 @@ MonoBehaviour:
       IsMe: 1
     - Text: (He's got a point.. I should really pay more attention.)
       IsMe: 1
-    successText: []
+    successText:
+    - Text: nice
+      IsMe: 0

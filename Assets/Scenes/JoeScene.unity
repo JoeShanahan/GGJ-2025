@@ -669,7 +669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: you became unemployed
+  m_Text: you died
 --- !u!222 &162631065
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -31,6 +31,8 @@ namespace GGJ2025.PouringGame
         public void Reset()
         {
             _ui.Reset();
+            _totalR = _totalB = _totalG = _totalLiquid = 0;
+            _liquidScaler.localScale = new Vector3(1, 0, 1);
             CurrentAmounts = new Dictionary<IngredientData, float>();
         }
         
