@@ -17,16 +17,94 @@ MonoBehaviour:
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: (Ah shit, this guy again.)
+      IsMe: 1
+    - Text: What do you think? Same as I always get.
+      IsMe: 0
+    - Text: Sorry, sir. This is only my second shift - I don't remember what you
+        ordered last night.
+      IsMe: 1
+    - Text: Just make the damn drink!
+      IsMe: 0
+    - Text: (Shit.. what did he get yesterday?)
+      IsMe: 1
+    failText:
+    - Text: The fuck did you do to this drink? How'd you fuck up this badly?
+      IsMe: 0
+    - Text: ...
+      IsMe: 1
+    - Text: 'Got nothing to say? '
+      IsMe: 0
+    - Text: ...
+      IsMe: 1
+    - Text: Didn't think so. Maybe look for a new job if you can't mix drinks.
+      IsMe: 0
+    - Text: (Asshole..)
+      IsMe: 1
+    successText:
+    - Text: 'Looks alright. '
+      IsMe: 0
+    - Text: ...Thanks.
+      IsMe: 0
+    - Text: You're welcome.
+      IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Oh hello, you. How was your shift last night?
+      IsMe: 0
+    - Text: Eh, it went alright. I messed up a bit but think I'm getting more into
+        the swing of it now.
+      IsMe: 1
+    - Text: Aw, try not to be too hard on yourself. I'm sure you did fine.
+      IsMe: 0
+    - Text: If you don't mind me making a little request.. Would it be alright to
+        get double Gin in the Dry Martini this time?
+      IsMe: 0
+    - Text: Sure! Don't see why not.
+      IsMe: 1
+    failText:
+    - Text: Mmm.. looks interesting..
+      IsMe: 0
+    - Text: Hope you like it!
+      IsMe: 1
+    - Text: Yeah.. thanks..
+      IsMe: 0
+    - Text: (I get the feeling I messed that one up..)
+      IsMe: 1
+    successText:
+    - Text: Oh, wonderful. You're a star!
+      IsMe: 0
+    - Text: No worries at all. Hope you like it!
+      IsMe: 1
+    - Text: Thank you, lovely.
+      IsMe: 0
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Hi. Got an important meeting tomorrow so can't drink tonight. Could I
+        get a Mimosa without the Prosecco?
+      IsMe: 0
+    - Text: So.. orange juice?
+      IsMe: 1
+    - Text: Yeah.
+      IsMe: 0
+    - Text: Right.
+      IsMe: 1
+    failText:
+    - Text: Not sure how you messed up a glass of orange juice..
+      IsMe: 0
+    - Text: Yeah, honestly I don't know what's wrong with me today.
+      IsMe: 1
+    successText:
+    - Text: 'Thanks. '
+      IsMe: 0
+    - Text: No worries!
+      IsMe: 1
