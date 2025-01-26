@@ -20,5 +20,8 @@ MonoBehaviour:
     Parts: 2
   - Ingredient: {fileID: 11400000, guid: f6e74036946dd434ca7ed3835ed2407c, type: 2}
     Parts: 3
-  FullMinimum: 40
-  FullMaximum: 60
+  Description: You made the drink! Great job!
+  Icon: {fileID: 21300000, guid: a7296b23153b24fe48ed45876f96f709, type: 3}
+  FailedIcon: {fileID: 21300000, guid: a8cc9c61dc6094b30bcbb0ac29315016, type: 3}
+  FullMinimum: 25
+  FullMaximum: 75

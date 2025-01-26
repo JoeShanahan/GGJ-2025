@@ -26,6 +26,7 @@ namespace GGJ2025.PouringGame
         public Dictionary<IngredientData, float> CurrentAmounts;
 
         public float TotalLiquid => _totalLiquid;
+        public float PercentFull => _totalLiquid / _maximumFill;
         
         public void Reset()
         {
