@@ -26,6 +26,6 @@ public class RecipeItem
 {
     public IngredientData Ingredient;
     
-    [Range(1, 10)]
+    [Range(0, 10)]
     public float Parts;
 }

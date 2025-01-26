@@ -14,7 +14,7 @@ public class SelectableIngredient : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public Color alpha = new Color(0.3f, 0.3f, 0.3f, 1);
     
-    public Vector3 selectedDelta;
+    private Vector3 selectedDelta = new Vector3(110, 0, 0);
     public Vector3 inactiveScale;
     public Vector3 highlightScale;
     public Vector3 selectedScale;
@@ -81,16 +81,19 @@ public class SelectableIngredient : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isOver)
-        {
-            isSelected = !isSelected;
-            
+        {            
             if (ingredientSelectionManager.IsInList(ingredient))
             {
                 ingredientSelectionManager.RemoveIngredient(ingredient);
+                isSelected = false;
             }
             else
             {
-                ingredientSelectionManager.AddIngredient(ingredient);
+                if (ingredientSelectionManager.ingredientsSelected.Length < 5)
+                {
+                    ingredientSelectionManager.AddIngredient(ingredient);
+                    isSelected = true;
+                }
             }
         }
     }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Prosecco
   m_EditorClassIdentifier: 
   IngredientName: Prosecco
-  Tint: {r: 0.90196085, g: 0.8078432, b: 0.03137255, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 1, g: 0.9708312, b: 0.73018867, a: 0}
+  BottlePrefab: {fileID: 82166500806685168, guid: 4f93791f51b7f624e8346bb763560037, type: 3}

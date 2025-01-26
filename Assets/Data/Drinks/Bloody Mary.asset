@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d74b1f514af433585754f6b1e7f914, type: 3}
+  m_Name: Bloody Mary
+  m_EditorClassIdentifier: 
+  CocktailName: Bloody Mary
+  Recipe:
+  - Ingredient: {fileID: 11400000, guid: 67c5c67de42ee492190471bed0a84e4a, type: 2}
+    Parts: 1
+  - Ingredient: {fileID: 11400000, guid: 0f8b004ecb9b13143b4a6024e16e202b, type: 2}
+    Parts: 4
+  - Ingredient: {fileID: 11400000, guid: 74dbbb30cd60b7049a7295fce604e1ec, type: 2}
+    Parts: 0.2
+  - Ingredient: {fileID: 11400000, guid: 1c73155544fe6d84d94dc141c676b541, type: 2}
+    Parts: 0.2
+  - Ingredient: {fileID: 11400000, guid: d9fa6e63b7db4314c89b86326a4f26aa, type: 2}
+    Parts: 0.2
+  Description: It's like breakfast... but a drink!
+  Icon: {fileID: -159327559631017497, guid: 3f2e5628dd961bf408c09a56e1578706, type: 3}
+  FailedIcon: {fileID: -6390870499983946040, guid: 4655c98bca440e5419ceca3decd7f183, type: 3}
+  FullMinimum: 90
+  FullMaximum: 100

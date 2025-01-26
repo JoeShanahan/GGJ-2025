@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IngredientName: Vodka
   Tint: {r: 0.7176471, g: 0.72156864, b: 0.7294118, a: 0}
-  BottlePrefab: {fileID: 0}
+  BottlePrefab: {fileID: 35594172526684015, guid: b3844d2dcdafa33438277bc665c7841a, type: 3}
