@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Triple Sec
   m_EditorClassIdentifier: 
   IngredientName: Triple Sec
-  Tint: {r: 0.9547169, g: 0.6588117, b: 0.36567453, a: 0}
+  Tint: {r: 0.9547169, g: 0.6588117, b: 0.36567453, a: 1}
   BottlePrefab: {fileID: 7254795776746764376, guid: 41780a29302057d4a9191999b962c865, type: 3}

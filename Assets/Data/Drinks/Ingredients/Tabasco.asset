@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tabasco
   m_EditorClassIdentifier: 
   IngredientName: Tabasco
-  Tint: {r: 0.74509805, g: 0.2901961, b: 0.13725491, a: 0}
+  Tint: {r: 0.74509805, g: 0.2901961, b: 0.13725491, a: 1}
   BottlePrefab: {fileID: 7254795776746764376, guid: 0d626b3a4b2f0804a8f0133663bc07d7, type: 3}
