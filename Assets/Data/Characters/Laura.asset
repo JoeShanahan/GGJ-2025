@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: Laura
   normal: {fileID: 1472526130075274611, guid: b36f54fc3182f5a4ba53bcbbe164501c, type: 3}
   unsettling: {fileID: 4927783147993345482, guid: df158078afc74b04984764bb690b6bb2, type: 3}
-  fullHorror: {fileID: -696363092026184366, guid: cd6c293c46abf914e918466023b4f287, type: 3}
+  fullHorror: {fileID: 6880934397834135631, guid: 66d30e14786858545abbd25fcc8a0cdb, type: 3}

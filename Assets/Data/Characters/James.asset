@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: James
   normal: {fileID: 4591929232172720676, guid: b36f54fc3182f5a4ba53bcbbe164501c, type: 3}
   unsettling: {fileID: 3863723487046822815, guid: df158078afc74b04984764bb690b6bb2, type: 3}
-  fullHorror: {fileID: 7870998005430352301, guid: cf2986cf50a35364c83082cbddb6be1c, type: 3}
+  fullHorror: {fileID: 7441809232043268085, guid: 66d30e14786858545abbd25fcc8a0cdb, type: 3}
