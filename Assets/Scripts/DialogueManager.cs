@@ -9,18 +9,26 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public Text nameText;
+    public Text dialogueText;
+
+    public Transform dialogueBox;
     private Queue<string> sentences;
+    
+    private string customerName;
+
+    public bool isMe;
     void Start()
     {
+        dialogueBox.gameObject.SetActive(false);
         sentences = new Queue<string>();
     }
     public void StartDialogue (Dialogue dialogue)
     {
+        dialogueBox.gameObject.SetActive(true);
         string StringSentences = String.Join(",", dialogue.DialogueArray);
 
-        nameText.text = dialogue.name;
+        customerName = dialogue.name;
 
         sentences.Clear();
         foreach (string sentence in dialogue.DialogueArray)
@@ -36,11 +44,24 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        if (!isMe)
+        {
+            nameText.text = customerName;
+        }
+        else
+        {
+            nameText.text = "You";
+        }
+
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }
     void EndDialogue()
     {
+        dialogueBox.gameObject.SetActive(false);
         Debug.Log("End of dialogue");
+    }
+    public void ChangeCheckbox(bool me){
+        isMe = me;
     }
 }

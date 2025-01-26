@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Vodka
   m_EditorClassIdentifier: 
   IngredientName: Vodka
+  Tint: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
