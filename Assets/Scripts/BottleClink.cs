@@ -11,11 +11,11 @@ public class BottleClink : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = Camera.main.GetComponent<AudioSource>();
 
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource component is missing from the prefab.");
+            Debug.LogError("AudioSource component is missing from the main camera.");
             return;
         }
 
