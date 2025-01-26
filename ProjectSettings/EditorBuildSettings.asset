@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/JoeScene.unity
+    guid: 9ac0992c24d0a42c2abb22074ada7e91
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b42b431a3fa43c840aed3501b5563432
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CursedMixology.unity
     guid: 3e44508d13a6a4f4f95bd520abb144e0
   m_configObjects: {}

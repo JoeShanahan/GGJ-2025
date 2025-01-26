@@ -41,8 +41,8 @@ namespace GGJ2025.PouringGame
         
         public void InitPouringGame(CocktailData cocktail)
         {
-            _goalText.text = GetGoalDebugString();
-            
+            _currentCocktail = cocktail;
+
             float totalParts = 0;
 
             foreach (RecipeItem itm in cocktail.Recipe)
@@ -51,11 +51,12 @@ namespace GGJ2025.PouringGame
             }
 
             _goalPercents = new Dictionary<IngredientData, float>();
-            
+
             foreach (RecipeItem itm in cocktail.Recipe)
             {
                 _goalPercents[itm.Ingredient] = itm.Parts / totalParts;
             }
+            _goalText.text = GetGoalDebugString();
 
             _shaker.Reset();
         }
