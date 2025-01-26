@@ -24,7 +24,7 @@ public class GameFlowController : MonoBehaviour
     private int _currentShiftIndex;
 
     [SerializeField]
-    private GameState.HorrorLevel _currentHorrorLevel;
+    public GameState.HorrorLevel _currentHorrorLevel;
 
     private int _failedCustomerCount;
     private ScreenManager _screenMan;
