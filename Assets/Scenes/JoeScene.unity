@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 173152779}
   - component: {fileID: 173152781}
   - component: {fileID: 173152780}
+  - component: {fileID: 173152782}
   m_Layer: 5
   m_Name: Text:Current
   m_TagString: Untagged
@@ -599,6 +600,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173152778}
   m_CullTransparentMesh: 1
+--- !u!114 &173152782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173152778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215b58ccf6be4bdc8b6f30d68321cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &248900107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,7 +2386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -59.100006}
+  m_AnchoredPosition: {x: 0, y: -59.099976}
   m_SizeDelta: {x: 1280, y: 260}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &831957905
@@ -3244,6 +3257,7 @@ GameObject:
   - component: {fileID: 1015580028}
   - component: {fileID: 1015580030}
   - component: {fileID: 1015580029}
+  - component: {fileID: 1015580031}
   m_Layer: 5
   m_Name: Text:Goal
   m_TagString: Untagged
@@ -3297,7 +3311,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -3312,6 +3326,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015580027}
   m_CullTransparentMesh: 1
+--- !u!114 &1015580031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015580027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0215b58ccf6be4bdc8b6f30d68321cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1025366086
 GameObject:
   m_ObjectHideFlags: 0
