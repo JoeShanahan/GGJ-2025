@@ -4,19 +4,27 @@ public class BottleClink : MonoBehaviour
 {
     [Header("Audio Settings")]
     public AudioClip clinkSound;
-    public float collisionCooldown = 0.5f;
+    public float collisionCooldown = 0.05f;
 
     private AudioSource audioSource;
     private float lastCollisionTime = -Mathf.Infinity;
 
     private void Start()
     {
-        audioSource = Camera.main.GetComponent<AudioSource>();
+        GameObject audioListenerObject = FindObjectOfType<AudioListener>()?.gameObject;
+
+        if (audioListenerObject == null)
+        {
+            Debug.LogError("No AudioListener found in the scene.");
+            return;
+        }
+
+        audioSource = audioListenerObject.GetComponent<AudioSource>();
 
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource component is missing from the main camera.");
-            return;
+            audioSource = audioListenerObject.AddComponent<AudioSource>();
+            Debug.LogWarning("No AudioSource found on the AudioListener. A new AudioSource has been added.");
         }
 
         if (clinkSound == null)
