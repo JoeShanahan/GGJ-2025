@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6695b50d10ba64f999cd8388174c200b, type: 3}
-  m_Name: Vodka
+  m_Name: Blue
   m_EditorClassIdentifier: 
-  IngredientName: Vodka
-  Tint: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
+  IngredientName: Blue
+  Tint: {r: 0.48584908, g: 0.7459489, b: 1, a: 1}

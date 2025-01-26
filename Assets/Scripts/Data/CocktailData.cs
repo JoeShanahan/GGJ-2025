@@ -9,10 +9,10 @@ public class CocktailData : ScriptableObject
     public List<RecipeItem> Recipe;
     
     [Range(0, 100)]
-    public int PercentFull = 50;
-    
+    public int FullMinimum = 10;
+
     [Range(0, 100)]
-    public int FullTolerance = 10;
+    public int FullMaximum = 10;
 }
 
 [System.Serializable]
@@ -20,6 +20,6 @@ public class RecipeItem
 {
     public IngredientData Ingredient;
     
-    [Range(1, 20)]
-    public int Parts;
+    [Range(1, 10)]
+    public float Parts;
 }
