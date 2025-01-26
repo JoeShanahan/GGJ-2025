@@ -17,16 +17,94 @@ MonoBehaviour:
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: 'My usual. '
+      IsMe: 0
+    - Text: Right.
+      IsMe: 1
+    failText:
+    - Text: Oh for fuck sake! What is this shit?
+      IsMe: 0
+    - Text: You know what? You're an asshole. I don't care if you like your fucking
+        drink or not.
+      IsMe: 1
+    - Text: Who the fuck do you think you're talking to?!
+      IsMe: 0
+    - Text: Just fuck off.
+      IsMe: 1
+    successText:
+    - Text: 'Cool, looks good. Thanks. '
+      IsMe: 0
+    - Text: Uh.. no worries?
+      IsMe: 1
+    - Text: (I seriously can't get a read on this guy...)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: 'Hey! How''s my favourite bartender? '
+      IsMe: 0
+    - Text: I'm ok, I suppose. I just feel like I'm messing up a lot. The manager
+        keeps giving me dirty looks...
+      IsMe: 1
+    - Text: It's making me nervous.
+      IsMe: 1
+    - Text: Oh, pay no attention. The drinks you've made for me so far have been
+        great. I think people can just be too fussy.
+      IsMe: 0
+    - Text: Thanks. Means a lot.
+      IsMe: 1
+    - Text: Any time. Could I get a Dry Martini? Regular amount of Gin this time.
+        Got a bit carried away last night!
+      IsMe: 0
+    failText:
+    - Text: 'Ah.. '
+      IsMe: 0
+    - Text: What's wrong?
+      IsMe: 1
+    - Text: I'm sorry, darling. This just isn't want I ordered...
+      IsMe: 0
+    - Text: Fuck. I'm so sorry.
+      IsMe: 1
+    successText:
+    - Text: See? Nothing wrong with this drink. It looks lovely.
+      IsMe: 0
+    - Text: Thank you. I hope you have a great evening and enjoy your drink.
+      IsMe: 1
+    - Text: See you around!
+      IsMe: 0
+    - Text: 'Yeah, see you around. '
+      IsMe: 1
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Heeeyyy.. Lemme get... the strongest drink you have!
+      IsMe: 0
+    - Text: Damn. No offence but you seen wasted. Not sure I can serve you like this.
+      IsMe: 1
+    - Text: C'moon.. I just lost my fucking job.. Just one drink and then I'll go.
+        Please.
+      IsMe: 0
+    - Text: ...Alright, fine. One drink.
+      IsMe: 1
+    - Text: Make it a strong one!
+      IsMe: 0
+    failText:
+    - Text: 'This isn''t what I wanted! Aahh fuck it. Can''t have shit in this fucking
+        place. '
+      IsMe: 0
+    - Text: (Hope he's not driving home...)
+      IsMe: 1
+    successText:
+    - Text: 'Yeesss!! I promise I''ll behave. Thanks for this. I owe you one. '
+      IsMe: 0
+    - Text: 'No worries just.. look after yourself. You''ll find something else. '
+      IsMe: 1
+    - Text: 'Yeah.. but for now it''s time to wallow in self pity. '
+      IsMe: 0
+    - Text: (Hope he's not driving home...)
+      IsMe: 1

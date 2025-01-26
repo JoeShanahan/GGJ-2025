@@ -18,21 +18,70 @@ MonoBehaviour:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
     introText:
-    - Text: 
+    - Text: Hey, wh--
+      IsMe: 1
+    - Text: Just get me a Bloody Mary.
       IsMe: 0
-    - Text: 
-      IsMe: 0
+    - Text: ...
+      IsMe: 1
     failText:
-    - Text: 
+    - Text: What the fuck is this?
       IsMe: 0
-    successText: []
+    - Text: Your Bloody Mary..?
+      IsMe: 1
+    - Text: This looks like shit, I'm not paying for this.
+      IsMe: 0
+    - Text: (Don't know why this guy needs to be such an asshole about it)
+      IsMe: 1
+    successText:
+    - Text: Here's your drink.
+      IsMe: 1
+    - Text: Right, yeah.
+      IsMe: 0
+    - Text: (Don't know why this guy needs to be such an asshole about it)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: 'Oh, hello! Haven''t seen you in here before. You''re new? '
+      IsMe: 0
+    - Text: Uuh.. Yeah, I am. My first shift, actually.
+      IsMe: 1
+    - Text: 'Well, I hope it''s going well. I''m sure you''re doing amazing. '
+      IsMe: 0
+    - Text: I'd love a Dry Martini, please.
+      IsMe: 0
+    failText:
+    - Text: Oh... Huh. Well, practise makes perfect!
+      IsMe: 0
+    - Text: Is there something wrong?
+      IsMe: 1
+    - Text: ...
+      IsMe: 0
+    successText:
+    - Text: Thank you so much. This looks delicious!
+      IsMe: 0
+    - Text: Glad you think so.
+      IsMe: 1
+    - Text: (Aw, she seems nice!)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
+    introText:
+    - Text: Hey, what can I get you?
+      IsMe: 1
+    - Text: Hm.. I shouldn't have anything too strong...
+      IsMe: 0
+    - Text: 'I''ll just get a Mimosa, thanks. '
+      IsMe: 0
+    failText:
+    - Text: Hm.. honestly not sure how you messed that one up but I guess you're
+        new..
+      IsMe: 0
+    - Text: ...
+      IsMe: 1
+    - Text: (He's got a point.. I should really pay more attention.)
+      IsMe: 1
     successText: []
