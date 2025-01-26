@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CocktailName: Blood
   Recipe:
-  - Ingredient: {fileID: 11400000, guid: 67c5c67de42ee492190471bed0a84e4a, type: 2}
+  - Ingredient: {fileID: 11400000, guid: 392bd4b072c64084ebaa8a6a08c177ad, type: 2}
     Parts: 10
   Description: I need to get away from this place...
   Icon: {fileID: 2556976114099912639, guid: 3f2e5628dd961bf408c09a56e1578706, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Orange Juice
   m_EditorClassIdentifier: 
   IngredientName: Orange Juice
-  Tint: {r: 1, g: 0.6288388, b: 0.2588235, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 1, g: 0.54318196, b: 0, a: 0}
+  BottlePrefab: {fileID: 7254795776746764376, guid: a3c36c20e04b47448af90cc0e576c3c9, type: 3}

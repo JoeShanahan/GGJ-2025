@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Gin
   m_EditorClassIdentifier: 
   IngredientName: Gin
-  Tint: {r: 0.098039225, g: 0.7372549, b: 0.9058824, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 0.74889994, g: 0.93564236, b: 0.98490566, a: 0}
+  BottlePrefab: {fileID: 35594172526684015, guid: 9ee9f1cce967c764e8524fb29f1ed8b1, type: 3}

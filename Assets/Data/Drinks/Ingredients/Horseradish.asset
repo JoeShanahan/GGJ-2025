@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IngredientName: Horseradish
   Tint: {r: 0.9490197, g: 0.9215687, b: 0.8117648, a: 0}
-  BottlePrefab: {fileID: 0}
+  BottlePrefab: {fileID: 82166500806685168, guid: 939c964e56eb74b49b330c53430900bc, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Dry Vermouth
   m_EditorClassIdentifier: 
   IngredientName: Dry Vermouth
-  Tint: {r: 0.011764707, g: 0.5803922, b: 0.007843138, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 0.83438855, g: 0.8867924, b: 0.6140619, a: 0}
+  BottlePrefab: {fileID: 35594172526684015, guid: de187c32029e0984689ed6f8acf5f234, type: 3}
