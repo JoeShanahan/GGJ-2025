@@ -42,7 +42,7 @@ namespace GGJ2025.PouringGame
             _latestElement.preferredHeight = 0;
         }
 
-        private void Reset()
+        public void Reset()
         {
             foreach (Transform t in _parentObject)
             {

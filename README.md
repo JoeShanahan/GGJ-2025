@@ -4,6 +4,9 @@ The Mad Mixologist
 
 ## NEEDED
 * Scoring for mixing
+  * Score result should contain pass or fail
+  * Score result should contain too full or too empty
+  * Score result should contain mix info
 * Smoothie Results Screen
 * Spawning ingredient bottles
 

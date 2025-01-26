@@ -23,7 +23,16 @@ namespace GGJ2025.PouringGame
         private float _totalG;
         private float _totalB;
         private float _totalLiquid;
+        public Dictionary<IngredientData, float> CurrentAmounts;
 
+        public float TotalLiquid => _totalLiquid;
+        
+        public void Reset()
+        {
+            _ui.Reset();
+            CurrentAmounts = new Dictionary<IngredientData, float>();
+        }
+        
         private void Start()
         {
             _liquidScaler.localScale = new Vector3(1, 0, 1);
@@ -31,13 +40,17 @@ namespace GGJ2025.PouringGame
         
         public void AddLiquid(IngredientData ingredient, float amount)
         {
-            _totalLiquid += amount;
-
-            if (_totalLiquid == 0)
+            if (amount == 0)
                 return;
 
             if (_totalLiquid >= _maximumFill)
                 return;
+
+            if (CurrentAmounts.ContainsKey(ingredient) == false)
+                CurrentAmounts[ingredient] = 0;
+
+            _totalLiquid += amount;
+            CurrentAmounts[ingredient] += amount;
             
             _totalR += ingredient.Tint.r * amount;
             _totalG += ingredient.Tint.g * amount;
@@ -50,7 +63,24 @@ namespace GGJ2025.PouringGame
             _liquidScaler.localScale = new Vector3(1, yScale, 1);
 
             _ui.AddToBar(amount / _maximumFill, ingredient);
+        }
+                
+        public string GetCurrentDebugString()
+        {
+            string result = "Current:\n";
 
+            if (CurrentAmounts == null || _totalLiquid == 0)
+                return "No liquid yet";
+
+            foreach ((IngredientData key, float val) in CurrentAmounts)
+            {
+                result += $"> {key.name}: " + (val/_totalLiquid * 100).ToString("n1") + "%\n";
+            }
+
+            int percentFull = Mathf.RoundToInt((_totalLiquid / _maximumFill) * 100);
+            result += $"({percentFull}% full)";
+            
+            return result;
         }
     }
 }
