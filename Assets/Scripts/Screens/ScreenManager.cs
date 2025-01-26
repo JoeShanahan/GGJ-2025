@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using GGJ2025.PouringGame;
 using UnityEngine.XR;
 
 namespace GGJ2025.Screens
@@ -21,6 +22,11 @@ namespace GGJ2025.Screens
         private GameObject _currentlyActiveScreen;
         private bool _inTransition;
 
+        private void Start()
+        {
+            ShowDayNumber();
+        }
+        
         public void SetShiftStarted(Shift shifty)
         {
             _dayNumberScreen.SetShiftStarted(shifty);
@@ -32,9 +38,10 @@ namespace GGJ2025.Screens
             _dialogueScreen.SetIntroduction(info);
         }
 
-        public void SetOrderComplete(OrderInfo info, bool success)
+        public void SetOrderComplete(DrinkMakeResult result, OrderInfo info)
         {
-            _dialogueScreen.SetComplete(info, success);
+            _dialogueScreen.SetComplete(info, result.WasSuccess);
+            GoToScreen(_dialogueScreen.gameObject);
         }
 
         public void ShowDayNumber() => GoToScreen(_dayNumberScreen.gameObject);

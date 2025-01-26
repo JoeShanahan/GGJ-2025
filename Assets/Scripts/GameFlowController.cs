@@ -1,16 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using GGJ2025.PouringGame;
 using GGJ2025.Screens;
 using UnityEngine.Serialization;
 
 public class GameFlowController : MonoBehaviour
 {
     [SerializeField] private DialogueManager _dialogueManager;
+    [SerializeField] private PouringController _pourGame;
     
     [SerializeField]
     private Shift[] _allKnownShiftData;
     private Shift _currentShift;
+    private OrderInfo _currentOrderInfo;
     
     [SerializeField]
     private List<CharacterData> _stillHereCharacters;
@@ -32,12 +35,23 @@ public class GameFlowController : MonoBehaviour
     {
         if (_hasMadeDrink)
         {
-            // ORDER COMPLETE
+            OnOrderEnd(_pourGame.GetResult().WasSuccess);
         }
         else
         {
             _screenMan.ShowIngredientPickingUI();
         }
+    }
+
+    public void StartMixingGame()
+    {
+        _screenMan.ShowPouringScreen();
+    }
+
+    public void EndMixingGame()
+    {
+        _hasMadeDrink = true;
+        _screenMan.SetOrderComplete(_pourGame.GetResult(), _currentOrderInfo);
     }
     
     private void Start()
@@ -95,11 +109,12 @@ public class GameFlowController : MonoBehaviour
 
     private void OnGameOver()
     {
-        
+        _screenMan.ShowGameOverScreen();
     }
     
     private void OnOrderStart(OrderInfo info)
     {
+        _currentOrderInfo = info;
         _hasMadeDrink = false;
         _screenMan.SetOrderStarted(info);
     }
@@ -117,21 +132,25 @@ public class GameFlowController : MonoBehaviour
 
         if (_stillHereCharacters.Count == 0)
         {
-            OnUnemployed();
+            OnGameOver();
         }
-    }
-
-    private void OnUnemployed()
-    {
-        
     }
 
     private void OnOrderEnd(bool success)
     {
-        //Check score, if failed add customer to failed list
+        if (success == false)
+        {
+            _stillHereCharacters.Remove(_currentOrderInfo.customer);
+            _failedCustomerCount++;
+        }
+        
+        if (_ordersRemaining.Count == 0)
+        {
+            OnShiftEnd();
+            return;
+        }
 
-        //Send success/fail dialogue to dialogue system
-
-        //If failed, incriment failed this shift
+        OrderInfo order = _ordersRemaining.Dequeue();
+        OnOrderStart(order);
     }
 }
