@@ -1391,6 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &476596092
 GameObject:
@@ -1708,6 +1711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &607232286
 GameObject:
@@ -2911,8 +2917,11 @@ MonoBehaviour:
   - {fileID: 1995250892}
   - {fileID: 1060018209}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &857417657
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!114 &853746953 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6098816553797533293, guid: 4f93791f51b7f624e8346bb763560037, type: 3}
@@ -3955,6 +3964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1129860119
 GameObject:
@@ -4409,6 +4421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1214449556
 GameObject:
@@ -4572,6 +4587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1262570869
 GameObject:
@@ -5012,12 +5030,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2771420333927848648, guid: de187c32029e0984689ed6f8acf5f234, type: 3}
   m_PrefabInstance: {fileID: 1388382235}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1388382240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2771420333927848648, guid: de187c32029e0984689ed6f8acf5f234, type: 3}
+  m_PrefabInstance: {fileID: 1388382235}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &1399741920
 GameObject:
@@ -5993,7 +6022,10 @@ CanvasRenderer:
   m_GameObject: {fileID: 1582961634}
   m_CullTransparentMesh: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!114 &1612083287 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7197706194523536060, guid: 41780a29302057d4a9191999b962c865, type: 3}
@@ -7304,6 +7336,9 @@ Transform:
   - {fileID: 963739079}
   - {fileID: 343859139}
   - {fileID: 1521337652}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7949,12 +7984,23 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7197706194523536060, guid: 0d626b3a4b2f0804a8f0133663bc07d7, type: 3}
   m_PrefabInstance: {fileID: 2119567485}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &2119567491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7197706194523536060, guid: 0d626b3a4b2f0804a8f0133663bc07d7, type: 3}
+  m_PrefabInstance: {fileID: 2119567485}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bea8edbf0cfc40ab984f5e4ece8874f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!137 &7134392393593759164
 SkinnedMeshRenderer:
