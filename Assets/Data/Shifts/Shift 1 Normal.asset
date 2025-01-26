@@ -16,7 +16,7 @@ MonoBehaviour:
   horrorLevel: 0
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
-    cocktail: {fileID: 0}
+    cocktail: {fileID: 11400000, guid: c408a4b1d9ac48348a6936a3c1be3079, type: 2}
     introText:
     - Text: Hey, wh--
       IsMe: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
     - Text: (Don't know why this guy needs to be such an asshole about it)
       IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
-    cocktail: {fileID: 0}
+    cocktail: {fileID: 11400000, guid: ee6c5299b2c8f4c28b5f87e24e545821, type: 2}
     introText:
     - Text: Hey, what can I get you?
       IsMe: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
     - Text: (Aw, she seems nice!)
       IsMe: 1
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
-    cocktail: {fileID: 0}
+    cocktail: {fileID: 11400000, guid: db68ca9059953bc449c03b8ed5ee136a, type: 2}
     introText:
     - Text: Hey, what can I get you?
       IsMe: 1
