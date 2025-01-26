@@ -12,21 +12,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c2725793dc1db44882afb0556501b0, type: 3}
   m_Name: Shift 3 Full-Horror
   m_EditorClassIdentifier: 
-  stage: 3
+  stage: 2
   horrorLevel: 2
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey.... what can I get you?
+      IsMe: 1
+    - Text: Blood.
+      IsMe: 0
+    - Text: Wha... what do you mean?
+      IsMe: 1
+    - Text: BLOOD.
+      IsMe: 0
+    failText:
+    - Text: I wanted blood. This isn't what I want.
+      IsMe: 0
+    - Text: I'm sorry. I can't..
+      IsMe: 1
+    - Text: (I feel so faint... I need to lie down)
+      IsMe: 1
+    successText:
+    - Text: Yess.. wonderful.
+      IsMe: 0
+    - Text: You'rrree.. You're wel...welcome...
+      IsMe: 1
+    - Text: (I feel like I'm going to pass out...)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey... what can I get you?
+      IsMe: 1
+    - Text: Arrg.. hh.. Eye.. Martini.
+      IsMe: 0
+    - Text: You mean Dry Martini?
+      IsMe: 1
+    - Text: Hrrruggh.. Nooo.
+      IsMe: 0
+    - Text: Right...
+      IsMe: 1
+    - Text: (What does she expect me to do?!)
+      IsMe: 1
+    failText:
+    - Text: HHHRRGHH!!
+      IsMe: 0
+    - Text: (I think I messed up..)
+      IsMe: 1
+    - Text: AARRRGGHH!!
+      IsMe: 0
+    successText:
+    - Text: Hrrhgh.. Good... Good..
+      IsMe: 0
+    - Text: Yeah..
+      IsMe: 1
+    - Text: (I feel like I'm going to be sick..)
+      IsMe: 1
   - customer: {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
     cocktail: {fileID: 0}
-    introText: []
-    failText: []
-    successText: []
+    introText:
+    - Text: Hey... what can I get you?
+      IsMe: 1
+    - Text: 'Heheeehhh... Mimosa. '
+      IsMe: 0
+    - Text: Just.. a Mimosa?
+      IsMe: 1
+    - Text: Hehh.. heheh.. You'll see.
+      IsMe: 0
+    - Text: (What is he talking about?)
+      IsMe: 0
+    failText:
+    - Text: 'Heeeeeeehhh... Wrong. '
+      IsMe: 0
+    - Text: Huh? That's a Mimosa isn't it?
+      IsMe: 1
+    - Text: No. hhehh.. Wrong. Next time, I'll just do it myself. Heehhheeh
+      IsMe: 0
+    successText:
+    - Text: HeheheheheeeehH!! You actually did it?!
+      IsMe: 0
+    - Text: ...
+      IsMe: 1
+    - Text: Look at you!! HEEHEHHHEH
+      IsMe: 0
+    - Text: (I'm going to die here, aren't I?)
+      IsMe: 1

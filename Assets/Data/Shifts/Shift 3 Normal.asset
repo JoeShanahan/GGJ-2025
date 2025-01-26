@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c2725793dc1db44882afb0556501b0, type: 3}
   m_Name: Shift 3 Normal
   m_EditorClassIdentifier: 
-  stage: 3
+  stage: 2
   horrorLevel: 0
   orders:
   - customer: {fileID: 11400000, guid: a5738f252958bf940ac60b782e2235fa, type: 2}

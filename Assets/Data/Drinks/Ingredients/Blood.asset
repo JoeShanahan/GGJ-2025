@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Blood
   m_EditorClassIdentifier: 
   IngredientName: Blood
-  Tint: {r: 0.92941177, g: 0.11764706, b: 0.14901961, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 0.4113207, g: 0.01784972, b: 0.03305645, a: 0}
+  BottlePrefab: {fileID: 7254795776746764376, guid: ae19a26c7c64e5c4cb98d36230f1fb71, type: 3}

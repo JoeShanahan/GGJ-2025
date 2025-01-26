@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Worcestershire sauce
   m_EditorClassIdentifier: 
   IngredientName: Worcestershire sauce
-  Tint: {r: 0.18823531, g: 0.054901965, b: 0.15294118, a: 0}
-  BottlePrefab: {fileID: 0}
+  Tint: {r: 0.1882353, g: 0.108993255, b: 0.054901954, a: 0}
+  BottlePrefab: {fileID: 7254795776746764376, guid: a88190f5a851fe74c93cb977c7f4bde8, type: 3}
