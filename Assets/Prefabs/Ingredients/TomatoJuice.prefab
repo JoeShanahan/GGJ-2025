@@ -112,7 +112,7 @@ MonoBehaviour:
   _startPouringRotate: 80
   _endPouringRotate: 150
   _maxPourRate: 1
-  _ingredient: {fileID: 11400000, guid: 67c5c67de42ee492190471bed0a84e4a, type: 2}
+  _ingredient: {fileID: 11400000, guid: 0f8b004ecb9b13143b4a6024e16e202b, type: 2}
 --- !u!50 &4291064552955514831
 Rigidbody2D:
   serializedVersion: 5
