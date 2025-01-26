@@ -5,13 +5,8 @@ using System.Collections.Generic;
 public class GameState : MonoBehaviour
 {
     public Shift[] ShiftData;
-    public enum Stage
-    {
-        Stage1 = 1,
-        Stage2 = 2,
-        Stage3 = 3
-    }
 
+    private Shift _currentShift;
     public enum HorrorLevel
     {
         Normal,
@@ -21,7 +16,7 @@ public class GameState : MonoBehaviour
 
     [Header("Game State Settings")]
     [SerializeField]
-    private Stage currentStage = Stage.Stage1;
+    private int currentStage;
 
     [SerializeField]
     private HorrorLevel currentHorrorLevel = HorrorLevel.Normal;
@@ -61,7 +56,7 @@ public class GameState : MonoBehaviour
         }
     }
 
-    public Stage CurrentStage
+    public int CurrentStage
     {
         get => currentStage;
         set
@@ -113,13 +108,35 @@ public class GameState : MonoBehaviour
         currentCharacterIndex = 0;
         Debug.Log("Current character index reset to 0.");
 
-        //Get correct shift object from list of shift objects
+        _currentShift = null;
+        
+        foreach (Shift s in ShiftData)
+        {
+            if (s.stage == currentShiftIndex && s.horrorLevel == currentHorrorLevel)
+            {
+                _currentShift = s;
+                break;
+            }
+        }
+        
+        if (_currentShift == null)
+            Debug.LogError($"COULD NOT FIND SHIFT {currentShiftIndex} - {currentHorrorLevel}");
 
         characters = successfulCustomers.ToArray();
         Debug.Log("Repopulated characters list with successful customers.");
 
         failedCustomers.Clear();
         Debug.Log("Cleared the failed customers list for this shift.");
+    }
+
+    private void Start()
+    {
+        OnGameStart();
+    }
+
+    private void OnGameStart()
+    {
+        OnShiftStart();
     }
 
     private void OnOrderStart()
@@ -282,7 +299,7 @@ public class GameState : MonoBehaviour
     {
         if (stageNumber >= 1 && stageNumber <= 3)
         {
-            CurrentStage = (Stage)stageNumber;
+            CurrentStage = stageNumber;
         }
         else
         {
@@ -304,7 +321,7 @@ public class GameState : MonoBehaviour
 
     public void IncreaseStage()
     {
-        if (currentStage < Stage.Stage3)
+        if (currentStage < 2)
         {
             CurrentStage = currentStage + 1;
         }
@@ -316,7 +333,7 @@ public class GameState : MonoBehaviour
 
     public void DecreaseStage()
     {
-        if (currentStage > Stage.Stage1)
+        if (currentStage > 0)
         {
             CurrentStage = currentStage - 1;
         }
