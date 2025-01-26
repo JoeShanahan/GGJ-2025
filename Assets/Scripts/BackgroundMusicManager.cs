@@ -3,10 +3,10 @@ using UnityEngine;
 public class BackgroundMusicManager : MonoBehaviour
 {
     [Header("References")]
-    public GameState gameState;
+    public GameFlowController gameFlowController;
     public AudioSource audioSource;
 
-    [Header("Background Music Clips")]
+    [Header("Music Tracks")]
     public AudioClip normalMusic;
     public AudioClip unsettlingMusic;
     public AudioClip fullHorrorMusic;
@@ -15,43 +15,43 @@ public class BackgroundMusicManager : MonoBehaviour
 
     private void Start()
     {
-        if (audioSource == null || gameState == null)
+        if (gameFlowController == null || audioSource == null)
         {
-            Debug.LogError("Missing references in BackgroundMusicManager.");
+            Debug.LogError("Missing references in MusicManager.");
             return;
         }
 
         audioSource.loop = true;
-        UpdateBackgroundMusic();
+        UpdateMusic();
     }
 
     private void Update()
     {
-        if (gameState.CurrentHorrorLevel != currentHorrorLevel)
+        if (gameFlowController._currentHorrorLevel != currentHorrorLevel)
         {
-            UpdateBackgroundMusic();
+            UpdateMusic();
         }
     }
 
-    private void UpdateBackgroundMusic()
+    private void UpdateMusic()
     {
-        currentHorrorLevel = gameState.CurrentHorrorLevel;
+        currentHorrorLevel = gameFlowController._currentHorrorLevel;
 
         switch (currentHorrorLevel)
         {
             case GameState.HorrorLevel.Normal:
                 audioSource.clip = normalMusic;
-                Debug.Log("Playing Normal Background Music.");
+                Debug.Log("Playing Normal Music.");
                 break;
 
             case GameState.HorrorLevel.Unsettling:
                 audioSource.clip = unsettlingMusic;
-                Debug.Log("Playing Unsettling Background Music.");
+                Debug.Log("Playing Unsettling Music.");
                 break;
 
             case GameState.HorrorLevel.FullHorror:
                 audioSource.clip = fullHorrorMusic;
-                Debug.Log("Playing Full Horror Background Music.");
+                Debug.Log("Playing Full Horror Music.");
                 break;
 
             default:
