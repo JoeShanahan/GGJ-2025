@@ -46,6 +46,8 @@ public class GameFlowController : MonoBehaviour
     public void StartMixingGame()
     {
         _screenMan.ShowPouringScreen();
+        _pourGame.InitPouringGame(_currentOrderInfo.cocktail);
+
     }
 
     public void EndMixingGame()

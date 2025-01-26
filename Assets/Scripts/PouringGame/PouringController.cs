@@ -21,11 +21,6 @@ namespace GGJ2025.PouringGame
         
         private Dictionary<IngredientData, float> _goalPercents;
 
-        private void Start()
-        {
-            InitPouringGame(_currentCocktail);
-            _goalText.text = GetGoalDebugString();
-        }
 
         private void Update()
         {
@@ -39,6 +34,8 @@ namespace GGJ2025.PouringGame
         
         public void InitPouringGame(CocktailData cocktail)
         {
+            _goalText.text = GetGoalDebugString();
+            
             float totalParts = 0;
 
             foreach (RecipeItem itm in cocktail.Recipe)
@@ -148,7 +145,7 @@ namespace GGJ2025.PouringGame
         {
             string result = "Goal:\n";
 
-            if (_currentCocktail == null)
+            if (_currentCocktail == null || _goalPercents == null)
                 return "Goal unavailable";
 
 

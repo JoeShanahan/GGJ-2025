@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 20494496649760155, guid: 1a0d9ad2502ad4043a0154a022045fb5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6567f9c0406a74bac0abff9d08e0b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5750,7 +5750,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 578819484}
   dialogueText: {fileID: 2089636251}
+  personSprite: {fileID: 1928727197}
   dialogueBox: {fileID: 658911414}
+  customerName: 
 --- !u!4 &1796134177
 Transform:
   m_ObjectHideFlags: 0
