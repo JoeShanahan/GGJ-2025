@@ -20,26 +20,21 @@ namespace GGJ2025.Screens
 
         private GameObject _currentlyActiveScreen;
         private bool _inTransition;
-        
-        private void Update()
+
+        public void SetShiftStarted(Shift shifty)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                ShowOrderScreen();
-            
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-                ShowIngredientPickingUI();
-            
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-                ShowPouringScreen();
-            
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-                ShowGameOverScreen();
-            
-            if (Input.GetKeyDown(KeyCode.Alpha5))
-                ShowDayNumber();
-            
-            if (Input.GetKeyDown(KeyCode.Alpha6))
-                ShowResponseScreen();
+            _dayNumberScreen.SetShiftStarted(shifty);
+            ShowDayNumber();
+        }
+
+        public void SetOrderStarted(OrderInfo info)
+        {
+            _dialogueScreen.SetIntroduction(info);
+        }
+
+        public void SetOrderComplete(OrderInfo info, bool success)
+        {
+            _dialogueScreen.SetComplete(info, success);
         }
 
         public void ShowDayNumber() => GoToScreen(_dayNumberScreen.gameObject);

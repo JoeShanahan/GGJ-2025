@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,28 +12,16 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
 
     public Transform dialogueBox;
-    private Queue<string> sentences;
+    private Queue<DialogueLine> sentences;
     
     private string customerName;
-
-    public bool isMe;
-    void Start()
-    {
-        dialogueBox.gameObject.SetActive(false);
-        sentences = new Queue<string>();
-    }
-    public void StartDialogue (Dialogue dialogue)
+    public event Action OnDialogueEnded;
+    
+    public void StartDialogue (DialogueLine[] dialogue)
     {
         dialogueBox.gameObject.SetActive(true);
-        string StringSentences = String.Join(",", dialogue.DialogueArray);
+        sentences = new Queue<DialogueLine>(dialogue);
 
-        customerName = dialogue.name;
-
-        sentences.Clear();
-        foreach (string sentence in dialogue.DialogueArray)
-        {
-            sentences.Enqueue(sentence);
-        }
         DisplayNextSentence();
     }
     public void DisplayNextSentence ()
@@ -44,24 +31,25 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        if (!isMe)
-        {
-            nameText.text = customerName;
-        }
-        else
+        
+        DialogueLine sentence = sentences.Dequeue();
+        
+        if (sentence.IsMe)
         {
             nameText.text = "You";
         }
+        else
+        {
+            nameText.text = customerName;
+        }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        dialogueText.text = sentence.Text;
     }
+    
     void EndDialogue()
     {
         dialogueBox.gameObject.SetActive(false);
+        OnDialogueEnded?.Invoke();
         Debug.Log("End of dialogue");
-    }
-    public void ChangeCheckbox(bool me){
-        isMe = me;
     }
 }

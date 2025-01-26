@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2440042790ae40079be16bad300bcbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogueManager: {fileID: 1796134176}
   _allKnownShiftData:
   - {fileID: 11400000, guid: 628d714f3bf083a4f87906cdbf9644cc, type: 2}
   - {fileID: 11400000, guid: d9d442e98e4d67549a19e560d3209f05, type: 2}
@@ -317,7 +318,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f477ec0bd4049b247839a7aa54ed7481, type: 2}
   - {fileID: 11400000, guid: 2b113b922ed66ca41be72cabbec171be, type: 2}
   _currentShiftIndex: 0
-  _currentCharacterIndex: 0
   _currentHorrorLevel: 0
 --- !u!4 &89333515
 Transform:
@@ -2467,7 +2467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &815351111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,6 +2480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3bc7c4907242159129af244d15843e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 1025366088}
+  _red: {r: 0.9528302, g: 0, b: 0, a: 1}
 --- !u!114 &815351112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2569,6 +2571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62114ab2edf24f55973638724a0d099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dman: {fileID: 1796134176}
 --- !u!114 &820703067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3489,11 +3492,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f50b18b88aded4456b80b9c14138dc55, type: 3}
-    m_FontSize: 72
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 7
-    m_MaxSize: 72
+    m_MaxSize: 90
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -5454,7 +5457,6 @@ MonoBehaviour:
   nameText: {fileID: 578819484}
   dialogueText: {fileID: 2089636251}
   dialogueBox: {fileID: 658911414}
-  isMe: 0
 --- !u!4 &1796134177
 Transform:
   m_ObjectHideFlags: 0

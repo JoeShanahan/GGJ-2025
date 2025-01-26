@@ -4,16 +4,19 @@ namespace GGJ2025.Screens
 {
     public class DialogueScreen : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField] private DialogueManager _dman;
+        
+        public void SetIntroduction(OrderInfo order)
         {
-
+            _dman.StartDialogue(order.introText);
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SetComplete(OrderInfo info, bool success)
         {
-
+            if (success)
+                _dman.StartDialogue(info.successText);
+            else
+                _dman.StartDialogue(info.failText);
         }
     }
 }
