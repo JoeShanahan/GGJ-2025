@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GGJ2025.Screens;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,10 @@ namespace GGJ2025.PouringGame
         [SerializeField, Range(0, 1)] private float _percentTolerance = 0.1f;
         
         [SerializeField] private FinishedDrinkPopup _finishPopup;
+
+        [SerializeField] private IngredientSelectionManager _ingredientSelectionManager;
+
+        [SerializeField] private Bottle[] bottleList;
         
         private Dictionary<IngredientData, float> _goalPercents;
 
@@ -44,6 +49,18 @@ namespace GGJ2025.PouringGame
             foreach (RecipeItem itm in cocktail.Recipe)
             {
                 totalParts += itm.Parts;
+            }
+
+            foreach (Bottle bottle in bottleList)
+            {
+                if(_ingredientSelectionManager.ingredientsSelected.Contains(bottle._ingredient) )
+                {
+                    bottle.gameObject.SetActive(true);
+                }
+                else
+                {
+                    bottle.gameObject.SetActive(false);
+                }
             }
 
             _goalPercents = new Dictionary<IngredientData, float>();

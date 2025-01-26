@@ -14,7 +14,11 @@ public class SelectableIngredient : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public Color alpha = new Color(0.3f, 0.3f, 0.3f, 1);
     
+<<<<<<< Updated upstream
     public Vector3 selectedDelta;
+=======
+    private Vector3 selectedDelta = new Vector3(1.4f, 0, 0);
+>>>>>>> Stashed changes
     public Vector3 inactiveScale;
     public Vector3 highlightScale;
     public Vector3 selectedScale;

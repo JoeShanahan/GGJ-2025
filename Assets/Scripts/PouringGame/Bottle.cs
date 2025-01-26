@@ -26,7 +26,7 @@ namespace GGJ2025.PouringGame
         [SerializeField, Range(0, 180)] private int _endPouringRotate;
         [SerializeField, Range(0, 10)] private float _maxPourRate;
 
-        [SerializeField] private IngredientData _ingredient;
+        [SerializeField] public IngredientData _ingredient;
         
         private bool _isMouseDown;
         private Vector3 _mouseOffset;

@@ -21,6 +21,18 @@ public class IngredientSelectionManager : MonoBehaviour
     {
         return System.Array.IndexOf(ingredientsSelected, ingredient);
     }
+<<<<<<< Updated upstream
+=======
+
+    public void ResetIngredients()
+    {
+        ingredientsSelected = new IngredientData[0];
+    }
+    public void ShowKnife()
+    {
+        knife.gameObject.SetActive(true);
+    }
+>>>>>>> Stashed changes
     public void NextPressed()
     {
         Debug.Log("Next pressed");
