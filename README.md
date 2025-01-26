@@ -3,18 +3,12 @@ The Mad Mixologist
 
 
 ## NEEDED
-* Scoring for mixing
-  * Score result should contain pass or fail
-  * Score result should contain too full or too empty
-  * Score result should contain mix info
-* Smoothie Results Screen
-* Spawning ingredient bottles
-
+* Results screen should appear when you press next on cocktail making
+* Spawning ingredient bottles based on what you picked
+* Different endings
+* Attach the PouringController result to the game
+* Replace the WAV files with ogg
 
 ## WANTED
 * Remove own eye?
-* Animations
-
-
-## MAYBE
-* Shaking bottles on later stage
+* Animation for cocktail complete popup
