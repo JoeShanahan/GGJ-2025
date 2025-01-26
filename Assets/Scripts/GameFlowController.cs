@@ -116,7 +116,7 @@ public class GameFlowController : MonoBehaviour
     {
         _currentOrderInfo = info;
         _hasMadeDrink = false;
-        _screenMan.SetOrderStarted(info);
+        _screenMan.SetOrderStarted(info, _currentShift.horrorLevel);
     }
 
     private void OnShiftEnd()

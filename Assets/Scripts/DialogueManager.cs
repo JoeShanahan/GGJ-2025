@@ -10,11 +10,12 @@ public class DialogueManager : MonoBehaviour
 {
     public Text nameText;
     public Text dialogueText;
-
+    public Image personSprite;
+    
     public Transform dialogueBox;
     private Queue<DialogueLine> sentences;
     
-    private string customerName;
+    public string customerName;
     public event Action OnDialogueEnded;
     
     public void StartDialogue (DialogueLine[] dialogue)

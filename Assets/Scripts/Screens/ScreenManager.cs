@@ -33,9 +33,9 @@ namespace GGJ2025.Screens
             ShowDayNumber();
         }
 
-        public void SetOrderStarted(OrderInfo info)
+        public void SetOrderStarted(OrderInfo info, GameState.HorrorLevel horrorLevel)
         {
-            _dialogueScreen.SetIntroduction(info);
+            _dialogueScreen.SetIntroduction(info, horrorLevel);
         }
 
         public void SetOrderComplete(DrinkMakeResult result, OrderInfo info)

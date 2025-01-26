@@ -6,9 +6,11 @@ namespace GGJ2025.Screens
     {
         [SerializeField] private DialogueManager _dman;
         
-        public void SetIntroduction(OrderInfo order)
+        public void SetIntroduction(OrderInfo order, GameState.HorrorLevel horrorLevel)
         {
             _dman.StartDialogue(order.introText);
+            _dman.customerName = order.customer.characterName;
+            _dman.personSprite.sprite = order.customer.GetSprite(horrorLevel);
         }
 
         public void SetComplete(OrderInfo info, bool success)

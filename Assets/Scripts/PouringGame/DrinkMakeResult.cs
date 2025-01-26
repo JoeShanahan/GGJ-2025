@@ -4,7 +4,8 @@ namespace GGJ2025.PouringGame
 {
     public class DrinkMakeResult
     {
-        public bool WasSuccess => MixSuccess && FillSuccess;
+        // public bool WasSuccess => MixSuccess && FillSuccess;
+        public bool WasSuccess => true;
 
         public string MixMessage;
         public bool MixSuccess;
