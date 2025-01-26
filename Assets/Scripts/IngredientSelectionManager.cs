@@ -11,7 +11,7 @@ public class IngredientSelectionManager : MonoBehaviour
 
     void Start()
     {
-        knife.gameObject.SetActive(true);
+        knife.gameObject.SetActive(false);
     }
 
     public void AddIngredient(IngredientData ingredientAdded)
