@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6695b50d10ba64f999cd8388174c200b, type: 3}
-  m_Name: Orange Flavoured Triple Sec
+  m_Name: Triple Sec
   m_EditorClassIdentifier: 
-  IngredientName: Orange Flavoured Triple Sec
+  IngredientName: Triple Sec
   Tint: {r: 0.6627451, g: 0.22352943, b: 0.078431375, a: 0}
   BottlePrefab: {fileID: 0}
