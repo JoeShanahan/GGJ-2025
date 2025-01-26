@@ -81,16 +81,19 @@ public class SelectableIngredient : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerClick(PointerEventData eventData)
     {
         if (isOver)
-        {
-            isSelected = !isSelected;
-            
+        {            
             if (ingredientSelectionManager.IsInList(ingredient))
             {
                 ingredientSelectionManager.RemoveIngredient(ingredient);
+                isSelected = false;
             }
             else
             {
-                ingredientSelectionManager.AddIngredient(ingredient);
+                if (ingredientSelectionManager.ingredientsSelected.Length <= 5)
+                {
+                    ingredientSelectionManager.AddIngredient(ingredient);
+                    isSelected = true;
+                }
             }
         }
     }
