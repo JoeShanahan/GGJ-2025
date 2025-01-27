@@ -15,3 +15,4 @@ MonoBehaviour:
   IngredientName: Gin
   Tint: {r: 0.74889994, g: 0.93564236, b: 0.98490566, a: 1}
   BottlePrefab: {fileID: 35594172526684015, guid: 9ee9f1cce967c764e8524fb29f1ed8b1, type: 3}
+  BottleClink: {fileID: 8300000, guid: fb7ea4f61aa64f34eaf0b4dc32b9483c, type: 3}

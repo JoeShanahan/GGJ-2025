@@ -15,3 +15,4 @@ MonoBehaviour:
   IngredientName: Orange Juice
   Tint: {r: 1, g: 0.54318196, b: 0, a: 1}
   BottlePrefab: {fileID: 7254795776746764376, guid: a3c36c20e04b47448af90cc0e576c3c9, type: 3}
+  BottleClink: {fileID: 8300000, guid: 366f8f772d1924047b06f1d2190f0ac4, type: 3}
