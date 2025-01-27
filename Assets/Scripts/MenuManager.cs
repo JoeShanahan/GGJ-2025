@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Togglable Image")]
     public GameObject togglableImage;
+    public GameObject togglableImagePouring;
 
     private void Start()
     {
@@ -61,5 +62,15 @@ public class MenuManager : MonoBehaviour
 
         togglableImage.SetActive(!togglableImage.activeSelf);
         Debug.Log($"Togglable image is now {(togglableImage.activeSelf ? "active" : "inactive")}.");
+    }
+
+    public void ToggleImagePouringActiveState() {
+        if (togglableImagePouring == null) {
+            Debug.LogError("Togglable image reference is missing.");
+            return;
+        }
+
+        togglableImagePouring.SetActive(!togglableImagePouring.activeSelf);
+        Debug.Log($"Togglable image is now {(togglableImagePouring.activeSelf ? "active" : "inactive")}.");
     }
 }
