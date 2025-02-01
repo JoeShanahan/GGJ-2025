@@ -45,12 +45,22 @@ public class GameFlowController : MonoBehaviour
         }
     }
 
-    public void StartMixingGame()
-    {
+    public void StartMixingGame() {
         Debug.Log("StartMixingGame");
+
+        PouringController pouringController = FindObjectOfType<PouringController>();
+        if (pouringController != null) {
+            pouringController.EnsurePourGraphics();
+            pouringController.EnsureShakerGraphics();
+        }
+
+        IngredientSelectionManager ingredientManager = FindObjectOfType<IngredientSelectionManager>();
+        if (ingredientManager != null) {
+            ingredientManager.SpawnDrinkPrefabs();
+        }
+
         _screenMan.ShowPouringScreen();
         _pourGame.InitPouringGame(_currentOrderInfo.cocktail);
-
     }
 
     public void EndMixingGame()

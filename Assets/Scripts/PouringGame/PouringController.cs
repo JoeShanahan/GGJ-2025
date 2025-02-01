@@ -20,7 +20,13 @@ namespace GGJ2025.PouringGame
         [SerializeField] private FinishedDrinkPopup _finishPopup;
         
         private Dictionary<IngredientData, float> _goalPercents;
-        
+
+        [SerializeField] private GameObject pourGraphicsPrefab;
+        private PourGraphics _pourGraphicsInstance;
+
+        [SerializeField] private GameObject shakerGraphicsPrefab;
+        private ShakerGraphics _shakerGraphicsInstance;
+
 
         private void Update()
         {
@@ -38,7 +44,37 @@ namespace GGJ2025.PouringGame
                 }
             }
         }
-        
+
+        public void EnsurePourGraphics() {
+            if (FindFirstObjectByType<PourGraphics>() == null) {
+                GameObject pourGraphicsObject = Instantiate(pourGraphicsPrefab);
+                _pourGraphicsInstance = pourGraphicsObject.GetComponent<PourGraphics>(); 
+
+                if (_pourGraphicsInstance == null) {
+                    Debug.LogError("PourGraphics component is missing on the instantiated prefab!");
+                } else {
+                    Debug.Log("PourGraphics instantiated successfully.");
+                }
+            } else {
+                _pourGraphicsInstance = FindFirstObjectByType<PourGraphics>();
+            }
+        }
+
+        public void EnsureShakerGraphics() {
+            if (FindFirstObjectByType<ShakerGraphics>() == null) {
+                GameObject shakerObject = Instantiate(shakerGraphicsPrefab);
+                _shakerGraphicsInstance = shakerObject.GetComponent<ShakerGraphics>();
+
+                if (_shakerGraphicsInstance == null) {
+                    Debug.LogError("ShakerGraphics component is missing on the instantiated prefab!");
+                } else {
+                    Debug.Log("ShakerGraphics instantiated successfully.");
+                }
+            } else {
+                _shakerGraphicsInstance = FindFirstObjectByType<ShakerGraphics>();
+            }
+        }
+
         public void InitPouringGame(CocktailData cocktail)
         {
             _currentCocktail = cocktail;

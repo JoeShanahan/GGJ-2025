@@ -56,12 +56,12 @@ namespace GGJ2025.PouringGame
         }
 
         // Start is called before the first frame update
-        void Start()
-        {
+        private void Start() {
             _rb = GetComponent<Rigidbody2D>();
             _mainCam = Camera.main;
-            _pourGraphics = FindFirstObjectByType<PourGraphics>();
-            _shakerGraphics = FindFirstObjectByType<ShakerGraphics>();
+
+            StartCoroutine(FindPourGraphics());
+            StartCoroutine(FindShakerGraphics());
         }
 
         // Update is called once per frame
@@ -71,6 +71,32 @@ namespace GGJ2025.PouringGame
             {
                 HandleDragging();
             }
+        }
+
+        private IEnumerator FindPourGraphics() {
+            while (_pourGraphics == null) {
+                _pourGraphics = FindFirstObjectByType<PourGraphics>();
+
+                if (_pourGraphics == null) {
+                    Debug.LogWarning("Waiting for PourGraphics to be instantiated...");
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
+
+            Debug.Log("PourGraphics found!");
+        }
+
+        private IEnumerator FindShakerGraphics() {
+            while (_shakerGraphics == null) {
+                _shakerGraphics = FindFirstObjectByType<ShakerGraphics>();
+
+                if (_shakerGraphics == null) {
+                    Debug.LogWarning("Waiting for ShakerGraphics to be instantiated...");
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
+
+            Debug.Log("ShakerGraphics found!");
         }
 
         private void HandleDragging()
