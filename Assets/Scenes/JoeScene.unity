@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 71138516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -429, y: -237, z: 0}
+  m_LocalPosition: {x: -429, y: -258, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1473,7 +1473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &460867181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1481,17 +1481,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460867180}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 85303535}
   m_Father: {fileID: 1267910038}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 38, y: 108}
+  m_AnchoredPosition: {x: -132, y: 103}
   m_SizeDelta: {x: 102.7374, y: 146.9432}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &460867182
@@ -5511,7 +5511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1267910035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8153,7 +8153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientsSelected: []
-  knife: {fileID: 460867181}
+  knife: {fileID: 460867180}
   spawnPoints:
   - {fileID: 1679500503}
   - {fileID: 2097402732}

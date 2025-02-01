@@ -32,16 +32,13 @@ public class GameFlowController : MonoBehaviour
 
     private bool _hasMadeDrink;
 
-    private void OnDialogueDone()
-    {
+    private void OnDialogueDone() {
         Debug.Log("OnDialogueDone");
-        if (_hasMadeDrink)
-        {
+
+        if (_hasMadeDrink) {
             OnOrderEnd(_pourGame.GetResult().WasSuccess);
-        }
-        else
-        {
-            _screenMan.ShowIngredientPickingUI();
+        } else {
+            _screenMan.ShowIngredientPickingUI(_currentHorrorLevel);
         }
     }
 
@@ -57,6 +54,11 @@ public class GameFlowController : MonoBehaviour
         IngredientSelectionManager ingredientManager = FindObjectOfType<IngredientSelectionManager>();
         if (ingredientManager != null) {
             ingredientManager.SpawnDrinkPrefabs();
+
+            bool isFullHorror = _currentHorrorLevel == GameState.HorrorLevel.FullHorror;
+            Debug.Log($"Current Horror Level: {_currentHorrorLevel}, Showing Knife: {isFullHorror}");
+
+            ingredientManager.ShowKnife(isFullHorror);
         }
 
         _screenMan.ShowPouringScreen();

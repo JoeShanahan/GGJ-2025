@@ -58,7 +58,22 @@ namespace GGJ2025.Screens
             // TODO set mode of screen to response
         }
 
-        public void ShowIngredientPickingUI() => GoToScreen(_pickScreen.gameObject);
+        public void ShowIngredientPickingUI(GameState.HorrorLevel currentHorrorLevel) {
+            bool isComingFromDialogue = _currentlyActiveScreen == _dialogueScreen.gameObject;
+            bool isFullHorror = currentHorrorLevel == GameState.HorrorLevel.FullHorror;
+
+            Debug.Log($"Transitioning to Pick Screen. Coming from Dialogue: {isComingFromDialogue}, Full Horror: {isFullHorror}");
+
+            GoToScreen(_pickScreen.gameObject);
+
+            if (isComingFromDialogue && isFullHorror) {
+                IngredientSelectionManager ingredientManager = FindObjectOfType<IngredientSelectionManager>();
+                if (ingredientManager != null) {
+                    Debug.Log("Showing Knife in Ingredient Selection!");
+                    ingredientManager.ShowKnife(true);
+                }
+            }
+        }
 
         public void ShowPouringScreen() => GoToScreen(_pourScreen.gameObject);
 

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class IngredientSelectionManager : MonoBehaviour {
     public IngredientData[] ingredientsSelected;
-    public Transform knife;
+    
+    [SerializeField] private GameObject knife;
 
-    [SerializeField] private Transform[] spawnPoints; // Assign 5 spawn points in Inspector
+    [SerializeField] private Transform[] spawnPoints;
 
     private readonly List<GameObject> _spawnedDrinks = new List<GameObject>();
-
-    void Start() {
-        knife.gameObject.SetActive(false);
-    }
 
     public void AddIngredient(IngredientData ingredientAdded) {
         ingredientsSelected = ingredientsSelected.Concat(new IngredientData[] { ingredientAdded }).ToArray();
@@ -30,8 +27,11 @@ public class IngredientSelectionManager : MonoBehaviour {
         return System.Array.IndexOf(ingredientsSelected, ingredient);
     }
 
-    public void ShowKnife() {
-        knife.gameObject.SetActive(true);
+    public void ShowKnife(bool show) {
+        if (knife == null) {
+            return;
+        }
+        knife.SetActive(show);
     }
 
     public void NextPressed() {
