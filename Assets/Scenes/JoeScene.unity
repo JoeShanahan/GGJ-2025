@@ -6667,7 +6667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1381292238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10721,7 +10721,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118017228}
-  - component: {fileID: 2118017227}
   m_Layer: 0
   m_Name: GarnishSelectionManager
   m_TagString: Untagged
@@ -10729,20 +10728,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2118017227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118017226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0321a6eb8dd26045bb6894fdffd2cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientsSelected: []
-  knife: {fileID: 0}
 --- !u!4 &2118017228
 Transform:
   m_ObjectHideFlags: 0
